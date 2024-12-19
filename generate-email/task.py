@@ -4,21 +4,50 @@ import requests
 from faker import Faker
 import imaplib
 import email
+from urllib.parse import quote
 
-# Function to get proxy information via API
-def get_proxy_info(proxy):
-    parts = proxy.split(":")
-    ip = parts[0]
 
-    response = requests.get(f"https://ipinfo.io/{ip}/json")
+def parse_proxy(proxy):
+    """
+    Function to process proxy format (host:port:username:password)
+    and return a dictionary of proxies.
+    """
+    try:
+        host, port, username, password = proxy.split(":")
+        # Encode username and password for special characters
+        username = quote(username)
+        password = quote(password)
 
-    if response.status_code == 200:
-        data = response.json()
-        return data
-    else:
+        proxies = {
+            "http": f"http://{username}:{password}@{host}:{port}",
+            "https": f"http://{username}:{password}@{host}:{port}",
+        }
+        return proxies
+    except Exception as e:
+        print(f"Erro ao processar o proxy: {e}")
         return None
 
-# connect with database
+
+def get_proxy_info(proxy):
+    """
+    Get proxy information using the IPinfo API.
+    """
+    proxies = parse_proxy(proxy)
+    if not proxies:
+        print("Erro ao formatar o proxy.")
+        return None
+
+    try:
+        response = requests.get("https://ipinfo.io/json", proxies=proxies, timeout=20)
+        response.raise_for_status()  # Lança exceção se houver erro HTTP
+        print("Conexão bem-sucedida")
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Erro ao conectar ao proxy: {e}")
+        return None
+
+
+# Conexão com o banco de dados
 try:
     db = mysql.connector.connect(
         host="127.0.0.1",
@@ -31,26 +60,26 @@ except Exception as e:
 
 cursor = db.cursor()
 
-# save emails and generate
+
 def save_email(email, senha):
     cursor.execute("INSERT INTO emails (email, senha) VALUES (%s, %s)", (email, senha))
     db.commit()
 
+
 def generate_emails(base_email, amount):
     emails_generated = []
     for i in range(amount):
-        # Garantir que o e-mail seja único
         new_email = f"{base_email}{random.randint(1000, 9999)}@gmail.com"
         senha = Faker().password()
         save_email(new_email, senha)
         emails_generated.append((new_email, senha))
     return emails_generated
 
-# main function
+
 def generate_email_and_proxy(proxy, email_count):
     emails_to_generate = []
     proxy_info = get_proxy_info(proxy)
-    
+
     if proxy_info:
         print("Informações do Proxy:")
         print(f"IP: {proxy_info['ip']}")
@@ -61,7 +90,6 @@ def generate_email_and_proxy(proxy, email_count):
         print(f"Código Postal: {proxy_info.get('postal', 'N/A')}")
         print(f"Timezone: {proxy_info.get('timezone', 'N/A')}")
 
-        # Lista de nomes e sobrenomes
         email_names = [
             "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela",
             "Carla", "Patricia", "Fernanda", "Larissa", "Amanda", "Luana", "Camila", "Thais",
@@ -72,20 +100,17 @@ def generate_email_and_proxy(proxy, email_count):
             "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", "Almeida",
             "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", "Araujo", "Ribeiro"
         ]
-        
-        # Gerar os e-mails
+
         for i in range(email_count):
             draw_email_name = random.choice(email_names)
             draw_email_surname = random.choice(email_surnames)
             base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
             emails = generate_emails(base_email, 1)
             emails_to_generate.extend(emails)
-        
-        # Exibir os e-mails gerados
+
         for email, senha in emails_to_generate:
             print(f"Email: {email}, Senha: {senha}")
-        
-        # Retornar todas as informações geradas como um dicionário
+
         return {
             "proxy_info": proxy_info,
             "emails": [{"email": email, "senha": senha} for email, senha in emails_to_generate]
@@ -94,14 +119,19 @@ def generate_email_and_proxy(proxy, email_count):
         print("Não foi possível obter informações do proxy.")
         return None
 
-# calls main functions
-email_count = 10
-proxy = "123.45.67.89"
-result = generate_email_and_proxy(proxy, email_count)
 
-if result:
-    print("\nInformações Geradas:")
-    print(result)
+# Configurações principais
+email_count = 10
+proxy = "rotating.proxyempire.io:9000:ukGDVRlSLkZYfG4A:mobile;us;;;"
+
+proxy_info = get_proxy_info(proxy)
+
+if proxy_info:
+    print("Informações do Proxy:")
+    print(proxy_info)
+else:
+    print("Não foi possível conectar ao proxy.")
+
 
 # # to check email
 # def to_check_email(usuario, senha):
