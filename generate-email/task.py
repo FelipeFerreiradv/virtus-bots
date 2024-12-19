@@ -3,10 +3,8 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from faker import Faker
 import mysql.connector
-from twilio.rest import Client
 import imaplib
 import email
-from env import TWILIO_SECRET_KEY
 
 print("Arquivo task.py carregado...")
 
