@@ -7,7 +7,7 @@ import imaplib
 import email
 import random
 
-# connect a databse 
+# Conectar ao banco de dados
 db = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
@@ -19,74 +19,64 @@ cursor = db.cursor()
 
 print(cursor)
 
-# function to save a emails in databse
+# Função para salvar e-mails no banco de dados
 def save_email(email, senha):
     cursor.execute("INSERT INTO emails (email, senha) VALUES (%s, %s)", (email, senha))
     db.commit()
 
-# generate emails with Faker
+# Gerar e-mails com base em um nome e quantidade solicitada
 def generate_emails(base_email, amount):
     emails_generated = []
     for i in range(amount):
-        new_email = f"{base_email}@gmail.com"
+        # Garantir que o e-mail seja único
+        new_email = f"{base_email}{random.randint(1000, 9999)}@gmail.com"
         senha = Faker().password()
         save_email(new_email, senha)
         emails_generated.append((new_email, senha))
     print(emails_generated)
     return emails_generated
 
-# examples of uses
-random_numbers = random.randint(100,200)
-print(random_numbers)
-email_names = [ 
-    "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela", 
+# Listas de nomes e sobrenomes
+email_names = [
+    "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela",
     "Carla", "Patricia", "Fernanda", "Larissa", "Amanda", "Luana", "Camila", "Thais",
     "Clara", "Valentina", "Rafaela", "Bianca", "Renata", "Eduarda", "Leticia", "Mariana",
-    "Luiza", "Yasmin", "Tatiana", "Monica", "Debora", "Flavia", "Cristina", "Diana", "Raquel", 
-    "Nathalia", "Marta", "Bruna", "Tania", "Carolina", "Jessica", "Lorena", "Milena", "Sabrina", 
-    "Helena", "Daniela", "Ingrid", "Veronica", "Juliana",  "Emily", "Sarah", "Olivia", "Emma", "Charlotte", "Ava", "Sofia", "Mia",
-    "Isabella", "Amelia", "Harper", "Evelyn", "Abigail", "Scarlett", "Victoria", "Madison",
-    "Luna", "Grace", "Zoe", "Addison", "Aubrey", "Ellie", "Stella", "Lucy",
-    "Chloe", "Natalie", "Hannah", "Lily", "Savannah", "Elizabeth", "Aria", "Brooklyn", 
-     "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", 
-    "Almeida", "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", 
-    "Araujo", "Ribeiro", "Moreira", "Moraes", "Castro", "Mendes", "Cardoso", "Campos",
-    "Nogueira", "Batista", "Dias", "Freitas", "Teixeira", "Cavalcanti", "Pinheiro", "Macedo", "Monteiro", 
-    "Borges", "Magalhaes", "Vieira", "Goncalves", "Fonseca", "Barros", "Farias", "Santana", "Miranda", 
-    "Assis", "Amaral", "Coelho", "Soares", "Correia", "Braga",
-    "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", 
-    "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor",
-    "Moore", "Martin", "Jackson", "White", "Harris", "Clark", "Lewis", "Young",
-    "Hall", "Scott", "Allen", "Walker", "King", "Wright", "Green", "Adams", "Nelson",
-    "Hill", "Ramirez", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Parker", 
-    "Collins", "Edwards", "Stewart", "Morris", "Morgan"
-    ]
-email_sumames = [
-    "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", 
-    "Almeida", "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", 
-    "Araujo", "Ribeiro", "Moreira", "Moraes", "Castro", "Mendes", "Cardoso", "Campos",
-    "Nogueira", "Batista", "Dias", "Freitas", "Teixeira", "Cavalcanti", "Pinheiro", "Macedo", "Monteiro", 
-    "Borges", "Magalhaes", "Vieira", "Goncalves", "Fonseca", "Barros", "Farias", "Santana", "Miranda", 
-    "Assis", "Amaral", "Coelho", "Soares", "Correia", "Braga",
-    "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", 
-    "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor",
-    "Moore", "Martin", "Jackson", "White", "Harris", "Clark", "Lewis", "Young",
-    "Hall", "Scott", "Allen", "Walker", "King", "Wright", "Green", "Adams", "Nelson",
-    "Hill", "Ramirez", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Parker", 
-    "Collins", "Edwards", "Stewart", "Morris", "Morgan"
+    "Luiza", "Yasmin", "Tatiana", "Monica", "Debora", "Flavia", "Cristina", "Diana", "Raquel",
+    "Nathalia", "Marta", "Bruna", "Tania", "Carolina", "Jessica", "Lorena", "Milena", "Sabrina",
+    "Helena", "Daniela", "Ingrid", "Veronica", "Juliana", "Emily", "Sarah", "Olivia", "Emma",
+    "Charlotte", "Ava", "Sofia", "Mia", "Isabella", "Amelia", "Harper", "Evelyn", "Abigail",
+    "Scarlett", "Victoria", "Madison", "Luna", "Grace", "Zoe", "Addison", "Aubrey", "Ellie",
+    "Stella", "Lucy", "Chloe", "Natalie", "Hannah", "Lily", "Savannah", "Elizabeth", "Aria", "Brooklyn"
 ]
-complete_names = []
-# loop name
-for i in range(100):
-    draw_email_names = random.choice(email_names)
-    draw_email_sumnames = random.choice(email_sumames)
-    complete_names_append = f"{draw_email_names}{draw_email_sumnames}{random_numbers}"
-    complete_names.append(complete_names_append)
-print(f"o nome sorteado foi {complete_names_append}")
 
-emails = generate_emails(complete_names_append, 10)
+email_surnames = [
+    "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes",
+    "Almeida", "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa",
+    "Araujo", "Ribeiro", "Moreira", "Moraes", "Castro", "Mendes", "Cardoso", "Campos",
+    "Nogueira", "Batista", "Dias", "Freitas", "Teixeira", "Cavalcanti", "Pinheiro", "Macedo", "Monteiro",
+    "Borges", "Magalhaes", "Vieira", "Goncalves", "Fonseca", "Barros", "Farias", "Santana", "Miranda",
+    "Assis", "Amaral", "Coelho", "Soares", "Correia", "Braga", "Johnson", "Williams", "Brown", "Jones",
+    "Miller", "Davis", "Garcia", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson",
+    "Anderson", "Thomas", "Taylor", "Moore", "Martin", "Jackson", "White", "Harris", "Clark", "Lewis", "Young",
+    "Hall", "Scott", "Allen", "Walker", "King", "Wright", "Green", "Adams", "Nelson", "Hill", "Ramirez",
+    "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Parker", "Collins", "Edwards", "Stewart",
+    "Morris", "Morgan"
+]
 
-for email, senha in emails:
+# Gerar 10 e-mails únicos
+email_count = 10
+emails_to_generate = []
+
+# Gerar 10 e-mails únicos
+for i in range(email_count):
+    draw_email_name = random.choice(email_names)
+    draw_email_surname = random.choice(email_surnames)
+    base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
+    emails = generate_emails(base_email, 1)  # Gerar apenas um e-mail por vez
+    emails_to_generate.extend(emails)  # Adicionar aos e-mails gerados
+
+# Exibir e-mails e senhas gerados
+for email, senha in emails_to_generate:
     print(f"Email: {email}, Senha: {senha}")
 
 # # credentials of ot 
