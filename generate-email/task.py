@@ -1,30 +1,41 @@
 import mysql.connector
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
+import random
+import requests
 from faker import Faker
-import mysql.connector
 import imaplib
 import email
-import random
 
-# Conectar ao banco de dados
-db = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    password="",
-    database="bot_email_generate"
-)
+# Function to get proxy information via API
+def get_proxy_info(proxy):
+    parts = proxy.split(":")
+    ip = parts[0]
+
+    response = requests.get(f"https://ipinfo.io/{ip}/json")
+
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        return None
+
+# connect with database
+try:
+    db = mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        password="",
+        database="bot_email_generate"
+    )
+except Exception as e:
+    print("Erro ao conectar ao banco de dados:", e)
 
 cursor = db.cursor()
 
-print(cursor)
-
-# Função para salvar e-mails no banco de dados
+# save emails and generate
 def save_email(email, senha):
     cursor.execute("INSERT INTO emails (email, senha) VALUES (%s, %s)", (email, senha))
     db.commit()
 
-# Gerar e-mails com base em um nome e quantidade solicitada
 def generate_emails(base_email, amount):
     emails_generated = []
     for i in range(amount):
@@ -33,53 +44,64 @@ def generate_emails(base_email, amount):
         senha = Faker().password()
         save_email(new_email, senha)
         emails_generated.append((new_email, senha))
-    print(emails_generated)
     return emails_generated
 
-# Listas de nomes e sobrenomes
-email_names = [
-    "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela",
-    "Carla", "Patricia", "Fernanda", "Larissa", "Amanda", "Luana", "Camila", "Thais",
-    "Clara", "Valentina", "Rafaela", "Bianca", "Renata", "Eduarda", "Leticia", "Mariana",
-    "Luiza", "Yasmin", "Tatiana", "Monica", "Debora", "Flavia", "Cristina", "Diana", "Raquel",
-    "Nathalia", "Marta", "Bruna", "Tania", "Carolina", "Jessica", "Lorena", "Milena", "Sabrina",
-    "Helena", "Daniela", "Ingrid", "Veronica", "Juliana", "Emily", "Sarah", "Olivia", "Emma",
-    "Charlotte", "Ava", "Sofia", "Mia", "Isabella", "Amelia", "Harper", "Evelyn", "Abigail",
-    "Scarlett", "Victoria", "Madison", "Luna", "Grace", "Zoe", "Addison", "Aubrey", "Ellie",
-    "Stella", "Lucy", "Chloe", "Natalie", "Hannah", "Lily", "Savannah", "Elizabeth", "Aria", "Brooklyn"
-]
+# main function
+def generate_email_and_proxy(proxy, email_count):
+    emails_to_generate = []
+    proxy_info = get_proxy_info(proxy)
+    
+    if proxy_info:
+        print("Informações do Proxy:")
+        print(f"IP: {proxy_info['ip']}")
+        print(f"Cidade: {proxy_info.get('city', 'N/A')}")
+        print(f"Região: {proxy_info.get('region', 'N/A')}")
+        print(f"País: {proxy_info.get('country', 'N/A')}")
+        print(f"Organização: {proxy_info.get('org', 'N/A')}")
+        print(f"Código Postal: {proxy_info.get('postal', 'N/A')}")
+        print(f"Timezone: {proxy_info.get('timezone', 'N/A')}")
 
-email_surnames = [
-    "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes",
-    "Almeida", "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa",
-    "Araujo", "Ribeiro", "Moreira", "Moraes", "Castro", "Mendes", "Cardoso", "Campos",
-    "Nogueira", "Batista", "Dias", "Freitas", "Teixeira", "Cavalcanti", "Pinheiro", "Macedo", "Monteiro",
-    "Borges", "Magalhaes", "Vieira", "Goncalves", "Fonseca", "Barros", "Farias", "Santana", "Miranda",
-    "Assis", "Amaral", "Coelho", "Soares", "Correia", "Braga", "Johnson", "Williams", "Brown", "Jones",
-    "Miller", "Davis", "Garcia", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson",
-    "Anderson", "Thomas", "Taylor", "Moore", "Martin", "Jackson", "White", "Harris", "Clark", "Lewis", "Young",
-    "Hall", "Scott", "Allen", "Walker", "King", "Wright", "Green", "Adams", "Nelson", "Hill", "Ramirez",
-    "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Parker", "Collins", "Edwards", "Stewart",
-    "Morris", "Morgan"
-]
+        # Lista de nomes e sobrenomes
+        email_names = [
+            "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela",
+            "Carla", "Patricia", "Fernanda", "Larissa", "Amanda", "Luana", "Camila", "Thais",
+            "Clara", "Valentina", "Rafaela", "Bianca", "Renata", "Eduarda", "Leticia", "Mariana",
+            "Luiza", "Yasmin", "Tatiana", "Monica", "Debora", "Flavia", "Cristina", "Diana", "Raquel"
+        ]
+        email_surnames = [
+            "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", "Almeida",
+            "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", "Araujo", "Ribeiro"
+        ]
+        
+        # Gerar os e-mails
+        for i in range(email_count):
+            draw_email_name = random.choice(email_names)
+            draw_email_surname = random.choice(email_surnames)
+            base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
+            emails = generate_emails(base_email, 1)
+            emails_to_generate.extend(emails)
+        
+        # Exibir os e-mails gerados
+        for email, senha in emails_to_generate:
+            print(f"Email: {email}, Senha: {senha}")
+        
+        # Retornar todas as informações geradas como um dicionário
+        return {
+            "proxy_info": proxy_info,
+            "emails": [{"email": email, "senha": senha} for email, senha in emails_to_generate]
+        }
+    else:
+        print("Não foi possível obter informações do proxy.")
+        return None
 
-# Gerar 10 e-mails únicos
+# calls main functions
 email_count = 10
-emails_to_generate = []
+proxy = "123.45.67.89"
+result = generate_email_and_proxy(proxy, email_count)
 
-# Gerar 10 e-mails únicos
-for i in range(email_count):
-    draw_email_name = random.choice(email_names)
-    draw_email_surname = random.choice(email_surnames)
-    base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
-    emails = generate_emails(base_email, 1)  # Gerar apenas um e-mail por vez
-    emails_to_generate.extend(emails)  # Adicionar aos e-mails gerados
-
-# Exibir e-mails e senhas gerados
-for email, senha in emails_to_generate:
-    print(f"Email: {email}, Senha: {senha}")
-
-# # credentials of ot 
+if result:
+    print("\nInformações Geradas:")
+    print(result)
 
 # # to check email
 # def to_check_email(usuario, senha):
@@ -94,8 +116,3 @@ for email, senha in emails_to_generate:
 #         mensagem = email.message_from_bytes(dados[0][1])
 #         print(f"De: {mensagem['from']}")
 #         print(f"Assunto: {mensagem['subject']}")
-
-# # function to mark as verified
-# def mark_as_verified(email):
-#     cursor.execute("UPDATE emails SET status = 'usado' WHERE email = %s", (email,))
-#     db.commit()
