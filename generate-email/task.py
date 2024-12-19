@@ -55,6 +55,7 @@ try:
         password="",
         database="bot_email_generate"
     )
+    print("Conexão com o banco de dados bem-sucedida!")
 except Exception as e:
     print("Erro ao conectar ao banco de dados:", e)
 
@@ -64,6 +65,14 @@ cursor = db.cursor()
 def save_email(email, senha):
     cursor.execute("INSERT INTO emails (email, senha) VALUES (%s, %s)", (email, senha))
     db.commit()
+    print(f"Email salvo: {email}")
+
+    cursor.execute("SELECT email, senha FROM emails WHERE email = %s", (email,))
+    result = cursor.fetchone()
+    if result:
+        print(f"Email recuperado: {result[0]}, Senha: {result[1]}")
+    else:
+        print("Erro ao salvar o email.")
 
 
 def generate_emails(base_email, amount):
@@ -73,6 +82,10 @@ def generate_emails(base_email, amount):
         senha = Faker().password()
         save_email(new_email, senha)
         emails_generated.append((new_email, senha))
+        print(f"Email gerado: {new_email}, Senha: {senha}")
+
+    mostrar_emails()
+    print(f"Total de emails gerados: {len(emails_generated)}")
     return emails_generated
 
 
@@ -105,9 +118,12 @@ def generate_email_and_proxy(proxy, email_count):
             draw_email_name = random.choice(email_names)
             draw_email_surname = random.choice(email_surnames)
             base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
-            emails = generate_emails(base_email, 1)
+            print(f"Base do email gerado: {base_email}")  # Confirma a base do email
+            emails = generate_emails(base_email, 10)
             emails_to_generate.extend(emails)
-
+        
+        print(f"Total de emails gerados (final): {len(emails_to_generate)}")
+        
         for email, senha in emails_to_generate:
             print(f"Email: {email}, Senha: {senha}")
 
@@ -118,7 +134,6 @@ def generate_email_and_proxy(proxy, email_count):
     else:
         print("Não foi possível obter informações do proxy.")
         return None
-
 
 # Configurações principais
 email_count = 10
@@ -132,6 +147,16 @@ if proxy_info:
 else:
     print("Não foi possível conectar ao proxy.")
 
+def mostrar_emails():
+    cursor.execute("SELECT email, senha FROM emails")  # Selecione apenas as colunas que você precisa
+    emails = cursor.fetchall()
+
+    if emails:
+        print("Emails salvos no banco de dados:")
+        for email, senha in emails:
+            print(f"Email: {email}, Senha: {senha}")
+    else:
+        print("Nenhum email encontrado no banco de dados.")
 
 # # to check email
 # def to_check_email(usuario, senha):
