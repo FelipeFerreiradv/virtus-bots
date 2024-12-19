@@ -5,8 +5,7 @@ from faker import Faker
 import mysql.connector
 import imaplib
 import email
-
-print("Arquivo task.py carregado...")
+import random
 
 # connect a databse 
 db = mysql.connector.connect(
@@ -37,7 +36,56 @@ def generate_emails(base_email, amount):
     return emails_generated
 
 # examples of uses
-emails = generate_emails("felipe123", 10)
+random_numbers = random.randint(100,200)
+print(random_numbers)
+email_names = [ 
+    "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela", 
+    "Carla", "Patricia", "Fernanda", "Larissa", "Amanda", "Luana", "Camila", "Thais",
+    "Clara", "Valentina", "Rafaela", "Bianca", "Renata", "Eduarda", "Leticia", "Mariana",
+    "Luiza", "Yasmin", "Tatiana", "Monica", "Debora", "Flavia", "Cristina", "Diana", "Raquel", 
+    "Nathalia", "Marta", "Bruna", "Tania", "Carolina", "Jessica", "Lorena", "Milena", "Sabrina", 
+    "Helena", "Daniela", "Ingrid", "Veronica", "Juliana",  "Emily", "Sarah", "Olivia", "Emma", "Charlotte", "Ava", "Sofia", "Mia",
+    "Isabella", "Amelia", "Harper", "Evelyn", "Abigail", "Scarlett", "Victoria", "Madison",
+    "Luna", "Grace", "Zoe", "Addison", "Aubrey", "Ellie", "Stella", "Lucy",
+    "Chloe", "Natalie", "Hannah", "Lily", "Savannah", "Elizabeth", "Aria", "Brooklyn", 
+     "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", 
+    "Almeida", "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", 
+    "Araujo", "Ribeiro", "Moreira", "Moraes", "Castro", "Mendes", "Cardoso", "Campos",
+    "Nogueira", "Batista", "Dias", "Freitas", "Teixeira", "Cavalcanti", "Pinheiro", "Macedo", "Monteiro", 
+    "Borges", "Magalhaes", "Vieira", "Goncalves", "Fonseca", "Barros", "Farias", "Santana", "Miranda", 
+    "Assis", "Amaral", "Coelho", "Soares", "Correia", "Braga",
+    "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", 
+    "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor",
+    "Moore", "Martin", "Jackson", "White", "Harris", "Clark", "Lewis", "Young",
+    "Hall", "Scott", "Allen", "Walker", "King", "Wright", "Green", "Adams", "Nelson",
+    "Hill", "Ramirez", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Parker", 
+    "Collins", "Edwards", "Stewart", "Morris", "Morgan"
+    ]
+email_sumames = [
+    "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", 
+    "Almeida", "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", 
+    "Araujo", "Ribeiro", "Moreira", "Moraes", "Castro", "Mendes", "Cardoso", "Campos",
+    "Nogueira", "Batista", "Dias", "Freitas", "Teixeira", "Cavalcanti", "Pinheiro", "Macedo", "Monteiro", 
+    "Borges", "Magalhaes", "Vieira", "Goncalves", "Fonseca", "Barros", "Farias", "Santana", "Miranda", 
+    "Assis", "Amaral", "Coelho", "Soares", "Correia", "Braga",
+    "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", 
+    "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor",
+    "Moore", "Martin", "Jackson", "White", "Harris", "Clark", "Lewis", "Young",
+    "Hall", "Scott", "Allen", "Walker", "King", "Wright", "Green", "Adams", "Nelson",
+    "Hill", "Ramirez", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Parker", 
+    "Collins", "Edwards", "Stewart", "Morris", "Morgan"
+]
+complete_names = []
+# loop name
+for i in range(100):
+    draw_email_names = random.choice(email_names)
+    draw_email_sumnames = random.choice(email_sumames)
+    complete_names_append = f"{draw_email_names}{draw_email_sumnames}{random_numbers}"
+    complete_names.append(complete_names_append)
+print(f"o nome sorteado foi {complete_names_append}")
+
+emails = generate_emails(complete_names_append, 10)
+
 for email, senha in emails:
     print(f"Email: {email}, Senha: {senha}")
 
