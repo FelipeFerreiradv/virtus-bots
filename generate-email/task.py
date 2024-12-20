@@ -65,7 +65,7 @@ cursor = db.cursor()
 def save_email(email, senha):
     cursor.execute("INSERT INTO emails (email, senha) VALUES (%s, %s)", (email, senha))
     db.commit()
-    print(f"Email salvo: {email}")
+    print(f"Email salvo: {email}")  
 
     cursor.execute("SELECT email, senha FROM emails WHERE email = %s", (email,))
     result = cursor.fetchone()
@@ -84,7 +84,7 @@ def generate_emails(base_email, amount):
         emails_generated.append((new_email, senha))
         print(f"Email gerado: {new_email}, Senha: {senha}")
 
-    mostrar_emails()
+    show_emails()
     print(f"Total de emails gerados: {len(emails_generated)}")
     return emails_generated
 
@@ -147,8 +147,8 @@ if proxy_info:
 else:
     print("Não foi possível conectar ao proxy.")
 
-def mostrar_emails():
-    cursor.execute("SELECT email, senha FROM emails")  # Selecione apenas as colunas que você precisa
+def show_emails():
+    cursor.execute("SELECT email, senha FROM emails")
     emails = cursor.fetchall()
 
     if emails:
@@ -159,15 +159,31 @@ def mostrar_emails():
         print("Nenhum email encontrado no banco de dados.")
 
 # # to check email
-# def to_check_email(usuario, senha):
-#     mail = imaplib.IMAP4_SSL("imap.gmail.com")
-#     mail.login(usuario, senha)
-#     mail.select("inbox")
-    
-#     # Busca por emails não lidos
-#     status, mensagens = mail.search(None, "UNSEEN")
-#     for num in mensagens[0].split():
-#         status, dados = mail.fetch(num, "(RFC822)")
-#         mensagem = email.message_from_bytes(dados[0][1])
-#         print(f"De: {mensagem['from']}")
-#         print(f"Assunto: {mensagem['subject']}")
+def to_check_email(usuario, senha):
+    try:
+        mail = imaplib.IMAP4_SSL("imap.gmail.com")
+        mail.login(usuario, senha)
+        mail.select("inbox")
+        print("Login efetuado")
+    except imaplib.IMAP4.error:
+        print("Erro ao efetuar o login")
+        return 
+
+    # search for unread emails
+    try:
+        status, mensagens = mail.search(None, "UNSEEN")
+        if status != "OK":
+            print("Erro ao buscar emails não lidos.")
+            return
+
+        if mensagens[0]:
+            for num in mensagens[0].split():
+                status, dados = mail.fetch(num, "(RFC822)")
+                mensagem = email.message_from_bytes(dados[0][1])
+                print(f"De: {mensagem['from']}")
+                print(f"Assunto: {mensagem['subject']}")
+            print(f"Messages found")
+        else:
+            print("Nenhum email não lido encontrado.")
+    except Exception as e:
+        print(f"Erro ao buscar emails: {e}")
