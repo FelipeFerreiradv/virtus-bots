@@ -4,6 +4,9 @@ import requests
 from faker import Faker
 import email
 from urllib.parse import quote
+import imaplib
+import smtplib
+
 
 
 def parse_proxy(proxy):
@@ -58,10 +61,16 @@ except Exception as e:
 
 cursor = db.cursor()
 
-def save_email(email, senha):
-    cursor.execute("INSERT INTO emails (email, senha) VALUES (%s, %s)", (email, senha))
-    db.commit()
-    print(f"Email salvo: {email}")
+def save_email(email, senha, status_shadow):
+    """
+    Inserts the email into the database with the specified status.
+    """
+    try:
+        cursor.execute("INSERT INTO emails (email, senha, status_shadow) VALUES (%s, %s, %s)", (email, senha, status_shadow))
+        db.commit()
+        print(f"Email {email} salvo com status: {status_shadow}.")
+    except Exception as e:
+        print(f"Erro ao salvar email no banco de dados: {e}")
 
 def generate_emails(base_email, amount):
     """
@@ -71,7 +80,8 @@ def generate_emails(base_email, amount):
     for i in range(amount):
         new_email = f"{base_email}{random.randint(1000, 9999)}@gmail.com"
         senha = Faker().password()
-        save_email(new_email, senha)
+        status = "unknown"
+        save_email(new_email, senha, status)
         emails_generated.append((new_email, senha))
         print(f"Email gerado: {new_email}, Senha: {senha}")
 
@@ -98,7 +108,7 @@ def generate_email_set(email_count):
         draw_email_name = random.choice(email_names)
         draw_email_surname = random.choice(email_surnames)
         base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
-        emails = generate_emails(base_email, 10)
+        emails = generate_emails(base_email, 5)
         emails_to_generate.extend(emails)
 
     print(f"Total de emails gerados: {len(emails_to_generate)}")
@@ -133,38 +143,53 @@ if proxy_info:
 else:
     print("Erro ao obter informações do proxy.")
 
-email_count = 10
+email_count = 3
 emails = generate_email_set(email_count)
 for email, senha in emails:
     print(f"Email: {email}, Senha: {senha}")
 
+def test_email_delivery(email, senha, recipient):
+    try:
+        servidor = smtplib.SMTP("smtp.gmail.com", 587)
+        servidor.starttls()
+        servidor.login(email, senha)
+        message = "Teste de entrega de email."
+        servidor.sendmail(email, recipient, message)
+        servidor.quit()
+        print(f"Email enviado com sucesso de {email} para {recipient}.")
+        return True
+    except Exception as e:
+        print(f"Erro ao enviar email: {e}")
+        return False
 
-# # to check email
-# def to_check_email(usuario, senha):
-#     try:
-#         mail = imaplib.IMAP4_SSL("imap.gmail.com")
-#         mail.login(usuario, senha)
-#         mail.select("inbox")
-#         print("Login efetuado")
-#     except imaplib.IMAP4.error:
-#         print("Erro ao efetuar o login")
-#         return 
+# to check email
+def to_check_email(usuario, senha):
+    try:
+        mail = imaplib.IMAP4_SSL("imap.gmail.com")
+        mail.login(usuario, senha)
+        mail.select("inbox")
+        print("Login efetuado com sucesso.")
+        return True
+    except imaplib.IMAP4.error:
+        print("Falha no login para o email.")
+        return False
+    
+def verify_emails_and_insert(email, senha, test_recipient):
+    try:
+        login_is_sucess = test_email_delivery(email, senha, test_recipient)
 
-#     # search for unread emails
-#     try:
-#         status, mensagens = mail.search(None, "UNSEEN")
-#         if status != "OK":
-#             print("Erro ao buscar emails não lidos.")
-#             return
+        if login_is_sucess:
+            status_shadow = "no shadow ban"
+            print(f"Email {email} passou em todos os testes. Marcado como {status_shadow}.")
+        else:
+            status_shadow = "shadow ban"
+            print(f"Falha no envio para o email: {email}. Marcado como {status_shadow}.")
 
-#         if mensagens[0]:
-#             for num in mensagens[0].split():
-#                 status, dados = mail.fetch(num, "(RFC822)")
-#                 mensagem = email.message_from_bytes(dados[0][1])
-#                 print(f"De: {mensagem['from']}")
-#                 print(f"Assunto: {mensagem['subject']}")
-#             print(f"Messages found")
-#         else:
-#             print("Nenhum email não lido encontrado.")
-#     except Exception as e:
-#         print(f"Erro ao buscar emails: {e}")
+        # Insert the email into the database with the status
+        save_email(email, senha, status_shadow)
+        return login_is_sucess
+    except Exception as e:
+        print(f"Erro durante a verificação do email {email}: {e}")
+        status = "shadow ban"
+        save_email(email, senha, status_shadow)
+        return False
