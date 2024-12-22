@@ -1,94 +1,162 @@
-from task import get_phone_number, get_verification_code, fetch_emails, connect_db, save_email
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.proxy import Proxy, ProxyType
-import imaplib
+from selenium.common.exceptions import TimeoutException, WebDriverException
+from task import get_phone_number, get_verification_code, fetch_emails, connect_db, save_email
 import smtplib
+import imaplib
+import pyautogui as pg
+import time
 
-# Configuração do Selenium
+# Configuração de logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+# Configuração de constantes
+GOOGLE_SIGNUP_URL = "https://accounts.google.com"
+PROXY_SERVER = "rotating.proxyempire.io:9000:ukGDVRlSLkZYfG4A:mobile;us;;;"
+DEFAULT_WAIT_TIME = 30
+
+
 class EmailAutomation:
     def __init__(self, proxy=None):
-        options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # Executa em modo headless
-        options.add_argument("--disable-blink-features=AutomationControlled")
+        options = webdriver.FirefoxOptions()
+        # options.add_argument("--headless")
+        options.add_argument("--disable-blink-features=AutomationControlled")  # Remove a detecção de automação
+        options.add_argument("--disable-infobars")  # Remove a mensagem "Controlado por automação"
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--no-sandbox")
+        # options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        # options.add_experimental_option("useAutomationExtension", False)
         if proxy:
             options.add_argument(f"--proxy-server={proxy}")
-        self.driver = webdriver.Chrome(options=options)
+        
+        try:
+            self.driver = webdriver.Firefox(options=options)
+            logging.info("Navegador inicializado com sucesso.")
+        except WebDriverException as e:
+            logging.error(f"Erro ao inicializar o navegador: {e}")
+            raise
 
     def create_email_account(self, email, senha, primeiro_nome, sobrenome):
         driver = self.driver
-
         try:
-            # Acesse a página correta de criação de conta
-            driver.get("https://accounts.google.com")
-            wait = WebDriverWait(driver, 30)
+            # Acessar página de criação de conta
+            driver.get(GOOGLE_SIGNUP_URL)
+            wait = WebDriverWait(driver, DEFAULT_WAIT_TIME)
 
-            # Preencha os campos do formulário
+            # create a email button
+            pg.press(['tab', 'tab', 'tab', 'tab'])
+            pg.press("enter")
+            time.sleep(3)
+            pg.press("enter")
+
+            # # Preenchimento de dados pessoais
             wait.until(EC.presence_of_element_located((By.ID, "firstName"))).send_keys(primeiro_nome)
             driver.find_element(By.ID, "lastName").send_keys(sobrenome)
-            driver.find_element(By.ID, "username").send_keys(email.split("@")[0])
-            driver.find_element(By.NAME, "Passwd").send_keys(senha)
-            driver.find_element(By.NAME, "ConfirmPasswd").send_keys(senha)
+            driver.find_element(By.CLASS_NAME, "VfPpkd-RLmnJb").click()
+            # driver.find_element(By.NAME, "Passwd").send_keys(senha)
+            # driver.find_element(By.NAME, "ConfirmPasswd").send_keys(senha)
+            # driver.find_element(By.XPATH, "//span[text()='Próxima']").click()
 
-            # Continue para adicionar o telefone
-            driver.find_element(By.XPATH, "//span[text()='Próxima']").click()
+            # # Adicionar número de telefone
+            # phone_number = get_phone_number()
+            # wait.until(EC.presence_of_element_located((By.ID, "phoneNumberId"))).send_keys(phone_number)
+            # driver.find_element(By.XPATH, "//span[text()='Próxima']").click()
 
-            # Obter número de telefone e código de verificação
-            phone_number = get_phone_number()
-            wait.until(EC.presence_of_element_located((By.ID, "phoneNumberId"))).send_keys(phone_number)
-            driver.find_element(By.XPATH, "//span[text()='Próxima']").click()
+            # # Inserir código de verificação
+            # verification_code = get_verification_code(phone_number)
+            # wait.until(EC.presence_of_element_located((By.ID, "code"))).send_keys(verification_code)
+            # driver.find_element(By.XPATH, "//span[text()='Próxima']").click()
 
-            verification_code = get_verification_code(phone_number)
-            wait.until(EC.presence_of_element_located((By.ID, "code"))).send_keys(verification_code)
-            driver.find_element(By.XPATH, "//span[text()='Próxima']").click()
-
-            # Verifique o sucesso da conta
+            # Verificação de sucesso
             if "Bem-vindo" in driver.page_source:
-                print(f"Conta criada com sucesso: {email}")
-                return True
+                logging.info(f"Conta criada com sucesso: {email}")
+                return True 
             else:
-                print(f"Falha ao criar conta: {email}")
+                logging.warning(f"Falha ao criar conta: {email}")
                 return False
 
+        except TimeoutException as e:
+            logging.error(f"Erro de tempo limite durante a criação da conta {email}: {e}")
+            return False
         except Exception as e:
-            print(f"Erro ao criar conta para {email}: {e}")
+            logging.error(f"Erro inesperado ao criar a conta {email}: {e}")
             return False
 
     def close(self):
         self.driver.quit()
+        logging.info("Navegador fechado com sucesso.")
 
 
-# Processo principal
+def test_email_delivery(email, senha, recipient):
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587) as servidor:
+            servidor.starttls()
+            servidor.login(email, senha)
+            servidor.sendmail(email, recipient, "Teste de entrega de email.")
+            logging.info(f"Email enviado com sucesso de {email} para {recipient}.")
+            return True
+    except Exception as e:
+        logging.error(f"Erro ao enviar email de {email}: {e}")
+        return False
+
+
+def to_check_email(usuario, senha):
+    try:
+        with imaplib.IMAP4_SSL("imap.gmail.com") as mail:
+            mail.login(usuario, senha)
+            mail.select("inbox")
+            logging.info(f"Login efetuado com sucesso para {usuario}.")
+            return True
+    except imaplib.IMAP4.error as e:
+        logging.error(f"Falha no login para o email {usuario}: {e}")
+        return False
+
+
+def verify_emails_and_insert(email, senha, test_recipient, db):
+    try:
+        status = "no shadow ban" if test_email_delivery(email, senha, test_recipient) else "shadow ban"
+        logging.info(f"Email {email} verificado. Status: {status}.")
+        save_email(db, email, senha, status)
+    except Exception as e:
+        logging.error(f"Erro durante a verificação do email {email}: {e}")
+        save_email(db, email, senha, "shadow ban")
+
+
 def main():
     db = connect_db()
     if not db:
-        return  
+        logging.error("Falha ao conectar ao banco de dados.")
+        return
 
     emails = fetch_emails(db)
+    if not emails:
+        logging.warning("Nenhum email encontrado para processamento.")
+        db.close()
+        return
 
-    # Inicializar automação
-    automation = EmailAutomation(proxy="rotating.proxyempire.io:9000:ukGDVRlSLkZYfG4A:mobile;us;;;")
+    automation = None
+    try:
+        automation = EmailAutomation(proxy=PROXY_SERVER)
+        # for entry in emails:
+        #     email = entry['email']
+        #     senha = entry['senha']
+        #     primeiro_nome = entry['primeiro_nome']
+        #     sobrenome = entry['sobrenome']
+        #     if not automation.create_email_account(email, senha, primeiro_nome, sobrenome):
+        #         logging.warning(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
+    finally:
+        if automation:
+            automation.close()
+        db.close()
 
-    for entry in emails:
-        email = entry['email']
-        senha = entry['senha']
-        primeiro_nome = entry['primeiro_nome']
-        sobrenome = entry['sobrenome']
-
-        success = automation.create_email_account(email, senha, primeiro_nome, sobrenome)
-        if not success:
-            print(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
-
-    # Finalizar automação
-    automation.close()
-    db.close()
 
 if __name__ == "__main__":
     main()
+
 
 def test_email_delivery(email, senha, recipient):
     try:
