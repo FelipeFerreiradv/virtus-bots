@@ -2,194 +2,193 @@ import mysql.connector
 import random
 import requests
 from faker import Faker
-import email
 from urllib.parse import quote
-import imaplib
-import smtplib
+from dotenv import load_dotenv
+import os
+import time
+import logging
 
+# Configuração do logger
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler("bot_email_generate.log"), logging.StreamHandler()]
+)
 
+# Carregar variáveis de ambiente
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "")
+DB_NAME = os.getenv("DB_NAME", "bot_email_generate")
 
+# Instância global do Faker
+faker = Faker()
+
+# Funções auxiliares
 def parse_proxy(proxy):
-    """
-    Function to process proxy format (host:port:username:password)
-    and return a dictionary of proxies.
-    """
     try:
-        host, port, username, password = proxy.split(":")
-        # Encode username and password for special characters
-        username = quote(username)
-        password = quote(password)
-
-        proxies = {
-            "http": f"http://{username}:{password}@{host}:{port}",
-            "https": f"http://{username}:{password}@{host}:{port}",
-        }
-        return proxies
+        parts = proxy.split(":")
+        if len(parts) >= 4:
+            host, port, username, password = parts[:4]
+            username = quote(username)
+            password = quote(password)
+            return {
+                "http": f"http://{username}:{password}@{host}:{port}",
+                "https": f"http://{username}:{password}@{host}:{port}",
+            }
+        raise ValueError("Formato de proxy inválido.")
     except Exception as e:
-        print(f"Erro ao processar o proxy: {e}")
+        logging.error(f"Erro ao processar o proxy: {e}")
         return None
 
 def get_proxy_info(proxy):
-    """
-    Get proxy information using the IPinfo API.
-    """
     proxies = parse_proxy(proxy)
     if not proxies:
-        print("Erro ao formatar o proxy.")
         return None
-
     try:
         response = requests.get("https://ipinfo.io/json", proxies=proxies, timeout=20)
-        response.raise_for_status()  # Lança exceção se houver erro HTTP
-        print("Conexão bem-sucedida")
+        response.raise_for_status()
+        logging.info("Conexão bem-sucedida")
         return response.json()
     except requests.exceptions.RequestException as e:
-        print(f"Erro ao conectar ao proxy: {e}")
+        logging.error(f"Erro ao conectar ao proxy: {e}")
         return None
 
-# Conexão com o banco de dados
-try:
-    db = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="",
-        database="bot_email_generate"
-    )
-    print("Conexão com o banco de dados bem-sucedida!")
-except Exception as e:
-    print("Erro ao conectar ao banco de dados:", e)
-
-cursor = db.cursor()
-
-def save_email(email, senha, status_shadow):
-    """
-    Inserts the email into the database with the specified status.
-    """
+def connect_db():
     try:
-        cursor.execute("INSERT INTO emails (email, senha, status_shadow) VALUES (%s, %s, %s)", (email, senha, status_shadow))
-        db.commit()
-        print(f"Email {email} salvo com status: {status_shadow}.")
-    except Exception as e:
-        print(f"Erro ao salvar email no banco de dados: {e}")
+        return mysql.connector.connect(
+            host=DB_HOST,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            database=DB_NAME
+        )
+    except mysql.connector.Error as e:
+        logging.error(f"Erro ao conectar ao banco de dados: {e}")
+        return None
 
-def generate_emails(base_email, amount):
-    """
-    Gera uma lista de emails com senhas e os salva no banco de dados.
-    """
+def save_email(db, email, senha, status_shadow):
+    try:
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("SELECT COUNT(*) as count FROM emails WHERE email = %s", (email,))
+        if cursor.fetchone()['count'] == 0:
+            cursor.execute(
+                "INSERT INTO emails (email, senha, status_shadow) VALUES (%s, %s, %s)",
+                (email, senha, status_shadow)
+            )
+            db.commit()
+            logging.info(f"Email {email} salvo com status: {status_shadow}.")
+        else:
+            logging.info(f"Email {email} já existe no banco de dados.")
+    except mysql.connector.Error as e:
+        logging.error(f"Erro ao salvar email no banco de dados: {e}")
+
+def generate_emails(base_email, amount, db):
     emails_generated = []
-    for i in range(amount):
+    for _ in range(amount):
         new_email = f"{base_email}{random.randint(1000, 9999)}@gmail.com"
-        senha = Faker().password()
-        status = "unknown"
-        save_email(new_email, senha, status)
+        senha = faker.password()
+        save_email(db, new_email, senha, "unknown")
         emails_generated.append((new_email, senha))
-        print(f"Email gerado: {new_email}, Senha: {senha}")
-
-    print(f"Total de emails gerados: {len(emails_generated)}")
+    logging.info(f"Total de emails gerados: {len(emails_generated)}")
     return emails_generated
 
-def generate_email_set(email_count):
-    """
-    Função para criar e-mails e suas senhas com nomes fictícios.
-    """
+def generate_email_set(email_count, db):
     email_names = [
-        "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Sophia", "Alice", "Isabela",
-        "Carla", "Patricia", "Fernanda", "Larissa", "Amanda", "Luana", "Camila", "Thais",
-        "Clara", "Valentina", "Rafaela", "Bianca", "Renata", "Eduarda", "Leticia", "Mariana",
-        "Luiza", "Yasmin", "Tatiana", "Monica", "Debora", "Flavia", "Cristina", "Diana", "Raquel"
+        "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Fernanda", "Carla", "Patricia", "Luana", "Rita",
+        "Mariana", "Catarina", "Luciana", "Marta", "Juliana", "Vanessa", "Tania", "Simone", "Isabela", "Raquel",
+        "Larissa", "Aline", "Tatiane", "Camila", "Monique", "Daniele", "Caroline", "Bianca", "Renata", "Elaine",
+        "Lúcia", "Adriana", "Sandra", "Cristiane", "Sabrina", "Lilian", "Letícia", "Rosana", "Márcia", "Sílvia",
+        "Natalia", "Priscila", "Cíntia", "Marina", "Verônica", "Michele", "Juliana", "Paula", "Kelly", "Cláudia",
+        "Ester", "Joana", "Gláucia", "Rafaela", "Gabrielle", "Luciane", "Elaine", "Mariane", "Jéssica", "Kátia",
+        "Thais", "Silvia", "Eliane", "Andreia", "Cleusa", "Vilma", "Lorena", "Roseli", "Sueli", "Neide", "Vera"
     ]
     email_surnames = [
-        "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Martins", "Gomes", "Almeida",
-        "Lima", "Ferreira", "Rodrigues", "Barbosa", "Carvalho", "Sousa", "Araujo", "Ribeiro"
+    "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Almeida", "Rodrigues", "Souza", "Lima", "Gomes",
+    "Martins", "Fernandes", "Carvalho", "Melo", "Ribeiro", "Nascimento", "Araujo", "Dias", "Lopes", "Barbosa",
+    "Ferreira", "Batista", "Castro", "Pinto", "Cavalcanti", "Vieira", "Freitas", "Moreira", "Teixeira", "Machado",
+    "Queiroz", "Maciel", "Ramos", "Figueiredo", "Viana", "Moura", "Cunha", "Macedo", "Nunes", "Pereira", "Santos",
+    "Tavares", "Marques", "Brito", "Gonçalves", "Zanetti", "Serrano", "Lima", "Rosa", "Brandão", "Azevedo", 
+    "Pimentel", "Simões", "Cunha", "Barreto", "Pecanha", "Rochas", "Vasquez", "Farias", "Monteiro", "Martins",
+    "Lopes", "Morais", "Correia", "Pinheiro", "Nascimento", "Dias", "Cunha", "Lima", "Barbosa", "Silveira",
+    "Siqueira", "Salles", "Borges", "Assis", "Fonseca", "Valente", "Mota", "Fagundes", "Galvão", "Santiago", "Xavier",
+    "Vilela", "Serrano", "Vieira", "Vargas", "Ribeiro", "Moreira", "Cavalcanti", "Tavares", "Pereira", "Pimentel"
     ]
-
     emails_to_generate = []
     for _ in range(email_count):
-        draw_email_name = random.choice(email_names)
-        draw_email_surname = random.choice(email_surnames)
-        base_email = f"{draw_email_name}{draw_email_surname}{random.randint(100, 999)}"
-        emails = generate_emails(base_email, 5)
+        base_email = f"{random.choice(email_names)}{random.choice(email_surnames)}{random.randint(100, 999)}"
+        emails = generate_emails(base_email, 5, db)
         emails_to_generate.extend(emails)
-
-    print(f"Total de emails gerados: {len(emails_to_generate)}")
     return emails_to_generate
 
-def process_proxy(proxy):
-    """
-    Processa as informações do proxy e exibe detalhes sobre sua localização e provedor.
-    """
-    proxy_info = get_proxy_info(proxy)
+def fetch_emails(db):
+    try:
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("SELECT email, senha, status_shadow FROM emails WHERE status_shadow = 'unknown'")
+        emails = cursor.fetchall()
 
-    if proxy_info:
-        print("Informações do Proxy:")
-        print(f"IP: {proxy_info['ip']}")
-        print(f"Cidade: {proxy_info.get('city', 'N/A')}")
-        print(f"Região: {proxy_info.get('region', 'N/A')}")
-        print(f"País: {proxy_info.get('country', 'N/A')}")
-        print(f"Organização: {proxy_info.get('org', 'N/A')}")
-        print(f"Código Postal: {proxy_info.get('postal', 'N/A')}")
-        print(f"Timezone: {proxy_info.get('timezone', 'N/A')}")
-        return proxy_info
-    else:
-        print("Não foi possível obter informações do proxy.")
+        for email in emails:
+            # Dividir o nome do email para garantir que o primeiro_nome e sobrenome estejam corretos
+            nome_sobrenome = email['email'].split('@')[0]
+            
+            # Verificar se o nome_sobrenome contém um ponto
+            if '.' in nome_sobrenome:
+                nome, sobrenome = nome_sobrenome.split('.', 1)
+            else:
+                # Caso não tenha ponto, usar o mesmo valor para nome e sobrenome
+                nome = nome_sobrenome
+                sobrenome = ""
+
+            email['primeiro_nome'] = nome
+            email['sobrenome'] = sobrenome
+
+        return emails
+    except mysql.connector.Error as e:
+        logging.error(f"Erro ao buscar emails: {e}")
+        return []
+
+def get_phone_number():
+    try:
+        response = requests.get(
+            "https://5sim.net/v1/user/buy/activation/gmail",
+            headers={"Authorization": f"Bearer {API_KEY}"}
+        )
+        response.raise_for_status()
+        data = response.json()
+        phone = data.get('phone')
+        if phone:
+            logging.info(f"Número de telefone adquirido: {phone}")
+            return phone
+        logging.warning("Número de telefone não disponível.")
+        return None
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Erro ao buscar número: {e}")
         return None
 
-# Uso separado das funções
-proxy = "rotating.proxyempire.io:9000:ukGDVRlSLkZYfG4A:mobile;us;;;"
-proxy_info = process_proxy(proxy)
-
-if proxy_info:
-    print("Informações do proxy obtidas com sucesso.")
-else:
-    print("Erro ao obter informações do proxy.")
-
-email_count = 3
-emails = generate_email_set(email_count)
-for email, senha in emails:
-    print(f"Email: {email}, Senha: {senha}")
-
-def test_email_delivery(email, senha, recipient):
+def get_verification_code(phone_number):
     try:
-        servidor = smtplib.SMTP("smtp.gmail.com", 587)
-        servidor.starttls()
-        servidor.login(email, senha)
-        message = "Teste de entrega de email."
-        servidor.sendmail(email, recipient, message)
-        servidor.quit()
-        print(f"Email enviado com sucesso de {email} para {recipient}.")
-        return True
+        for _ in range(10):  # Tentar por 10 vezes
+            response = requests.get(
+                f"https://5sim.net/v1/user/check/{phone_number}", 
+                headers={"Authorization": f"Bearer {API_KEY}"}
+            )
+            response.raise_for_status()
+            data = response.json()
+            if 'sms' in data and len(data['sms']) > 0:
+                return data['sms'][0]['code']
+            time.sleep(5)  # Esperar 5 segundos antes de tentar novamente
+        logging.warning("Código não recebido a tempo.")
+        return None
     except Exception as e:
-        print(f"Erro ao enviar email: {e}")
-        return False
+        logging.error(f"Erro ao buscar código: {e}")
+        return None
 
-# to check email
-def to_check_email(usuario, senha):
-    try:
-        mail = imaplib.IMAP4_SSL("imap.gmail.com")
-        mail.login(usuario, senha)
-        mail.select("inbox")
-        print("Login efetuado com sucesso.")
-        return True
-    except imaplib.IMAP4.error:
-        print("Falha no login para o email.")
-        return False
-    
-def verify_emails_and_insert(email, senha, test_recipient):
-    try:
-        login_is_sucess = test_email_delivery(email, senha, test_recipient)
-
-        if login_is_sucess:
-            status_shadow = "no shadow ban"
-            print(f"Email {email} passou em todos os testes. Marcado como {status_shadow}.")
-        else:
-            status_shadow = "shadow ban"
-            print(f"Falha no envio para o email: {email}. Marcado como {status_shadow}.")
-
-        # Insert the email into the database with the status
-        save_email(email, senha, status_shadow)
-        return login_is_sucess
-    except Exception as e:
-        print(f"Erro durante a verificação do email {email}: {e}")
-        status = "shadow ban"
-        save_email(email, senha, status_shadow)
-        return False
+# Execução principal
+if __name__ == "__main__":
+    db = connect_db()
+    if db:
+        try:
+            generate_email_set(3, db)
+        finally:
+            db.close()
