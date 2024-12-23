@@ -189,6 +189,6 @@ if __name__ == "__main__":
     db = connect_db()
     if db:
         try:
-            generate_email_set(3, db)
+            generate_email_set(2, db)
         finally:
             db.close()

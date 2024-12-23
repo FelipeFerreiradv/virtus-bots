@@ -141,13 +141,13 @@ def main():
     automation = None
     try:
         automation = EmailAutomation(proxy=PROXY_SERVER)
-        # for entry in emails:
-        #     email = entry['email']
-        #     senha = entry['senha']
-        #     primeiro_nome = entry['primeiro_nome']
-        #     sobrenome = entry['sobrenome']
-        #     if not automation.create_email_account(email, senha, primeiro_nome, sobrenome):
-        #         logging.warning(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
+        for entry in emails:
+            email = entry['email']
+            senha = entry['senha']
+            primeiro_nome = entry['primeiro_nome']
+            sobrenome = entry['sobrenome']
+            if not automation.create_email_account(email, senha, primeiro_nome, sobrenome):
+                logging.warning(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
     finally:
         if automation:
             automation.close()
