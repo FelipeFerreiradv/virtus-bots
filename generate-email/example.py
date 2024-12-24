@@ -11,12 +11,13 @@ import random
 
 GOOGLE_SIGNUP_URL = "https://accounts.google.com"
 PROXY_SERVER = "rotating.proxyempire.io:9000:ukGDVRlSLkZYfG4A:mobile;us;;;"
-DEFAULT_WAIT_TIME = 50
+DEFAULT_WAIT_TIME = 50              
 
 class EmailAutomation:
     def __init__(self, proxy=None):
         options = webdriver.FirefoxOptions()
         # options.add_argument("--headless")
+        options.add_argument("-private")
         options.add_argument("--disable-blink-features=AutomationControlled")  # Remove a detecção de automação
         options.add_argument("--disable-infobars")  # Remove a mensagem "Controlado por automação"
         options.add_argument("--disable-extensions")
@@ -32,7 +33,7 @@ class EmailAutomation:
             logging.error(f"Erro ao iniciar o navegador: {e}")
             raise
 
-    def create_email_account(self, email, gmail):
+    def create_email_account(self, email, gmail, senha):
         driver = self.driver
         try:
             # open a google sign
@@ -73,23 +74,45 @@ class EmailAutomation:
             pg.press("enter")
             time.sleep(3)
             pg.press("enter")
-            time.sleep(3)
+            time.sleep(5)
             pg.press("tab")
             pg.press("space")
-            pg.press("enter")    
             pg.press("down")
-            time.sleep(3)
-            pg.press("tab")
-            pg.write(random.randint(1,30))
-            pg.press("tab")
-            pg.write(random.randint(1940,2024))
+            pg.press("enter")    
+            day_input = driver.find_element(By.ID, "day")
+            day_input.send_keys(random.randint(1,30))
+            year_input = driver.find_element(By.ID, "year")
+            year_input.send_keys(random.randint(1940, 2000))
             pg.press("tab")
             pg.press("space")
             pg.press("down")
             pg.press("enter")
             pg.press(["tab", "tab"])
             pg.press("enter")
-            
+            time.sleep(5)
+            gmail_input = driver.find_element(By.CLASS_NAME, "zHQkBf")
+            gmail_input.send_keys(f"{gmail}")
+            time.sleep(3)
+            pg.press("tab")
+            pg.press("enter")
+
+            error_path = driver.find_element(By.CLASS_NAME, "dMNVAe")
+            if error_path:
+                pg.press("tab")
+                pg.press("enter")
+
+            multiple_emails = driver.find_element(By.ID, "selectionc4")
+            if multiple_emails:
+                pg.press("tab")
+                pg.press("space")
+                pg.press("tab")
+                pg.press("enter")
+                pg.write(f"{senha}")
+                pg.press("tab")
+                pg.write(f"{senha}")
+                pg.press(["tab", "tab"])
+                pg.press("enter")
+
 
         except TimeoutException as e:
             logging.error(f"Erro de tempo limite durante a criação da conta {email}: {e}")
@@ -120,7 +143,7 @@ def main():
             email = entry['email']
             senha = entry['senha']
             gmail = entry['primeiro_nome']
-            if not automation.create_email_account(email, gmail):
+            if not automation.create_email_account(email, gmail, senha):
                 logging.warning(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
     finally:
         if not automation:
