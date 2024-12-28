@@ -9,9 +9,10 @@ import logging
 import time
 import random
 from task import get_phone_number, get_verification_code, fetch_emails, connect_db, save_email
+import pyautogui as pg
 
 GOOGLE_SIGNUP_URL = "https://accounts.google.com/signup"
-PROXY_SERVER = "rotating.proxyempire.io:9000:ukGDVRlSLkZYfG4A:mobile;us;;;"
+PROXY_SERVER = "ukGDVRlSLkZYfG4A:senha:rotating.proxyempire.io:9000"
 DEFAULT_WAIT_TIME = 120
 
 class EmailAutomation:
@@ -25,10 +26,21 @@ class EmailAutomation:
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--no-sandbox")
         options.add_argument("-private")
-        options.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+        options.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36")
 
         if proxy:
-            options.add_argument(f"--proxy-server={proxy}")
+            proxy_config = proxy.split(":")
+            if len(proxy_config) == 4:
+                user, password, ip, port = proxy_config
+                options.set_preference("network.proxy.type", 1)
+                options.set_preference("network.proxy.http", ip)
+                options.set_preference("network.proxy.http_port", int(port))
+                options.set_preference("network.proxy.ssl", ip)
+                options.set_preference("network.proxy.ssl_port", int(port))
+                options.set_preference("network.proxy.socks_username", user)
+                options.set_preference("network.proxy.socks_password", password)
+            else:
+                logging.error("Formato de proxy inválido. Por favor, revise a configuração.")
         try:
             service = Service(GeckoDriverManager().install())
             self.driver = webdriver.Firefox(service=service, options=options)
@@ -39,6 +51,7 @@ class EmailAutomation:
 
     def create_email_account(self, email):
         driver = self.driver
+        driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         try:
             # abrir página de signup do Google
             driver.get(GOOGLE_SIGNUP_URL)
@@ -66,7 +79,6 @@ class EmailAutomation:
             ]
 
             try:
-                time.sleep(3)
                 first_name_input = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@id='firstName']")))
                 first_name_input.clear()
                 first_name_input.send_keys(random.choice(email_names))
@@ -74,7 +86,6 @@ class EmailAutomation:
                 last_name_input.clear()
                 last_name_input.send_keys(random.choice(email_surnames))
                 next_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']")))
-                next_button.click()
                 driver.execute_script("arguments[0].scrollIntoView();", next_button)
                 next_button.click()
             except TimeoutException as e:
@@ -109,7 +120,7 @@ def main():
 
     automation = None
     try:
-        automation = EmailAutomation(proxy=PROXY_SERVER)
+        automation = EmailAutomation(proxy=None)
         for entry in emails:
             email = entry['email']
             senha = entry['senha']
