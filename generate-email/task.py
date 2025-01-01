@@ -152,7 +152,10 @@ def get_phone_number():
     try:
         response = requests.get(
             "https://5sim.net/v1/user/buy/activation/gmail",
-            headers={"Authorization": f"Bearer {API_KEY}"}
+            headers={
+                "Authorization": f"Bearer {API_KEY}",
+                "Accept": 'application/json',
+                }
         )
         response.raise_for_status()
         data = response.json()
@@ -168,7 +171,7 @@ def get_phone_number():
 
 def get_verification_code(phone_number):
     try:
-        for _ in range(10):  # Tentar por 10 vezes
+        for _ in range(10):
             response = requests.get(
                 f"https://5sim.net/v1/user/check/{phone_number}", 
                 headers={"Authorization": f"Bearer {API_KEY}"}
@@ -184,7 +187,6 @@ def get_verification_code(phone_number):
         logging.error(f"Erro ao buscar código: {e}")
         return None
 
-# Execução principal
 if __name__ == "__main__":
     db = connect_db()
     if db:

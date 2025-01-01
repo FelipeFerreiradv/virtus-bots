@@ -20,7 +20,7 @@ class EmailAutomation:
         self.page = self.content.new_page()
         logging.info("Browser opened")
 
-    def create_email_account(self, email, gmail):
+    def create_email_account(self, email, gmail, password):
         try:
             # abrir página de signup do Google
             self.page.goto(GOOGLE_SIGNUP_URL)
@@ -54,6 +54,7 @@ class EmailAutomation:
                     self.page.fill('input#firstName', first_name)
                     self.page.fill('input#lastName', last_name)
                     next_button = self.page.get_by_role('button')
+                    next_button_text = self.page.get_by_text("Próxima")
                     next_button.click()
                     logging.info(f"Filled: {first_name} {last_name}")
 
@@ -64,15 +65,25 @@ class EmailAutomation:
                 gender_select = self.page.locator("select[id = 'gender']")
                 gender_select.select_option(label="Homem")
                 next_button.click()
+                self.page.wait_for_load_state()
+                self.page.wait_for_selector("input[name='Username']", timeout=DEFAULT_WAIT_TIME)
+                self.page.locator("input[name='Username']").fill(gmail)
+                logging.info("Input gmail filled")
+                self.page.wait_for_selector("button", timeout=DEFAULT_WAIT_TIME)
+                next_button_text.click(force=True)
+                self.page.locator("input[name='Passwd']").fill(password)
+                self.page.locator("input[name='PasswdAgain']").fill(password)
+                logging.info("Password filled")
+                next_button.click()
 
                 try:
-                    input_gmail = self.page.get_by_role("input[class = 'zHQkBf']")
-                    input_gmail.fill(gmail)
-                    logging.info(f"input founded")
+                    self.page.fill("input#phoneNumberId", str(get_phone_number()))
+                    logging.info(f"Phone number filled: {get_phone_number()}")
+                    next_button.click()
                 except Exception as e:
-                    logging.error(f"Error to found input gmail: {e}")
+                    logging.erro(f"Not founded phone number {get_phone_number()}: {e}")
 
-                return Falsed
+                return False
             except PlaywrightTimeoutError as e:
                 logging.error(f"Timeout encountered: {e}")
         except Exception as e:
@@ -102,9 +113,9 @@ def main():
         automation = EmailAutomation(proxy=None)
         for entry in emails:
             email = entry['email']
-            senha = entry['senha']
+            password = entry['senha']
             gmail = entry['primeiro_nome']
-            if not automation.create_email_account(email, gmail):
+            if not automation.create_email_account(email, gmail, password):
                 logging.warning(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
     finally:
         if automation:
