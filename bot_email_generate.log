@@ -9481,3 +9481,429 @@ Call log:
 2025-01-01 14:42:15,725 - INFO - Filled: Tania Costa
 2025-01-01 14:42:16,474 - ERROR - Task was destroyed but it is pending!
 task: <Task pending name='Task-33' coro=<Page.wait_for_selector() done, defined at C:\Users\Levi\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_page.py:417> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\Levi\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_sync_base.py:111, ProtocolCallback.__init__.<locals>.cb() at C:\Users\Levi\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:198]>
+2025-01-01 14:50:00,321 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-01 14:50:00,332 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-01 14:50:00,335 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-01 14:50:00,347 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-01 14:50:00,351 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-01 14:50:00,359 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-01 14:50:00,362 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-01 14:50:00,364 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-01 14:50:00,366 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-01 14:50:00,377 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-01 14:50:00,380 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-01 14:50:00,392 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-01 14:50:00,395 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-01 14:50:00,398 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-01 14:50:00,400 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-01 14:50:00,412 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-01 14:50:00,415 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-01 14:50:00,431 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-01 14:50:00,433 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:00,433 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:00,434 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-01 14:50:00,439 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-01 14:50:00,447 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-01 14:50:00,456 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-01 14:50:00,459 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-01 14:50:00,461 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-01 14:50:00,463 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-01 14:50:00,473 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-01 14:50:00,480 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-01 14:50:00,489 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-01 14:50:00,490 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-01 14:50:00,492 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-01 14:50:00,498 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-01 14:50:00,500 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-01 14:50:00,502 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-01 14:50:00,524 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-01 14:50:00,532 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-01 14:50:00,552 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-01 14:50:00,555 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:00,557 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:00,558 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:00,558 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-01 14:50:00,569 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-01 14:50:00,580 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:00,730 - INFO - Email RaquelPereira3756146@gmail.com salvo com status: unknown.
+2025-01-01 14:50:00,779 - INFO - Email RaquelPereira3753367@gmail.com salvo com status: unknown.
+2025-01-01 14:50:00,823 - INFO - Email RaquelPereira3757358@gmail.com salvo com status: unknown.
+2025-01-01 14:50:00,923 - INFO - Email RaquelPereira3753578@gmail.com salvo com status: unknown.
+2025-01-01 14:50:00,980 - INFO - Email RaquelPereira3755209@gmail.com salvo com status: unknown.
+2025-01-01 14:50:00,980 - INFO - Total de emails gerados: 5
+2025-01-01 14:50:01,045 - INFO - Email CatarinaMelo1308129@gmail.com salvo com status: unknown.
+2025-01-01 14:50:01,089 - INFO - Email CatarinaMelo1309136@gmail.com salvo com status: unknown.
+2025-01-01 14:50:01,212 - INFO - Email CatarinaMelo1303587@gmail.com salvo com status: unknown.
+2025-01-01 14:50:01,299 - INFO - Email CatarinaMelo1302228@gmail.com salvo com status: unknown.
+2025-01-01 14:50:01,388 - INFO - Email CatarinaMelo1304390@gmail.com salvo com status: unknown.
+2025-01-01 14:50:01,389 - INFO - Total de emails gerados: 5
+2025-01-01 14:50:15,621 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-01 14:50:15,634 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-01 14:50:15,639 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-01 14:50:15,652 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-01 14:50:15,653 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-01 14:50:15,659 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-01 14:50:15,662 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-01 14:50:15,666 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-01 14:50:15,672 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-01 14:50:15,677 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-01 14:50:15,679 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-01 14:50:15,688 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-01 14:50:15,691 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-01 14:50:15,692 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-01 14:50:15,696 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-01 14:50:15,706 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-01 14:50:15,710 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-01 14:50:15,724 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-01 14:50:15,726 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:15,729 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:15,731 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-01 14:50:15,738 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-01 14:50:15,743 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-01 14:50:15,757 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-01 14:50:15,759 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-01 14:50:15,762 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-01 14:50:15,774 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-01 14:50:15,786 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-01 14:50:15,789 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-01 14:50:15,798 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-01 14:50:15,800 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-01 14:50:15,804 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-01 14:50:15,808 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-01 14:50:15,810 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-01 14:50:15,813 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-01 14:50:15,831 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-01 14:50:15,840 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-01 14:50:15,857 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-01 14:50:15,860 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:15,862 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:15,868 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:15,870 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-01 14:50:15,885 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-01 14:50:15,889 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:50:16,082 - DEBUG - Using proactor: IocpProactor
+2025-01-01 14:50:18,293 - INFO - Browser opened
+2025-01-01 14:50:33,839 - INFO - Filled: Beatriz Pereira
+2025-01-01 14:50:37,077 - INFO - Input gmail filled
+2025-01-01 14:50:38,334 - INFO - Password filled
+2025-01-01 14:50:38,602 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-01 14:50:39,418 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/gmail HTTP/1.1" 302 32
+2025-01-01 14:50:39,470 - DEBUG - https://5sim.net:443 "GET /404.html HTTP/1.1" 403 None
+2025-01-01 14:50:39,472 - ERROR - Erro ao buscar número: 403 Client Error: Forbidden for url: https://5sim.net/404.html
+2025-01-01 14:50:40,310 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-01 14:50:41,128 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/gmail HTTP/1.1" 302 32
+2025-01-01 14:50:41,152 - DEBUG - https://5sim.net:443 "GET /404.html HTTP/1.1" 403 None
+2025-01-01 14:50:41,154 - ERROR - Erro ao buscar número: 403 Client Error: Forbidden for url: https://5sim.net/404.html
+2025-01-01 14:50:41,155 - INFO - Phone number filled: None
+2025-01-01 14:50:41,250 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,764 - ERROR - Error ao criar conta de email: AlineAzevedo7668080@gmail.com
+2025-01-01 14:50:49,766 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,803 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-01 14:50:49,804 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,861 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-01 14:50:49,863 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,870 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-01 14:50:49,871 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,887 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-01 14:50:49,887 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,897 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-01 14:50:49,897 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,905 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-01 14:50:49,908 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,919 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-01 14:50:49,920 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,947 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-01 14:50:49,949 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,959 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-01 14:50:49,960 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,966 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-01 14:50:49,966 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,982 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-01 14:50:49,982 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:49,991 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-01 14:50:49,992 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,000 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-01 14:50:50,000 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,017 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-01 14:50:50,018 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,026 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-01 14:50:50,026 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,033 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-01 14:50:50,034 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,048 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-01 14:50:50,049 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,059 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-01 14:50:50,060 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,065 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-01 14:50:50,066 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,077 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-01 14:50:50,079 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,086 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-01 14:50:50,087 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,095 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-01 14:50:50,095 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,101 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-01 14:50:50,101 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,112 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-01 14:50:50,115 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,120 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-01 14:50:50,122 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,129 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-01 14:50:50,129 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,133 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-01 14:50:50,134 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:50:50,143 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-01 14:50:50,144 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 14:59:36,103 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-01 14:59:36,114 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-01 14:59:36,120 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-01 14:59:36,138 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-01 14:59:36,140 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-01 14:59:36,191 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-01 14:59:36,241 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-01 14:59:36,273 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-01 14:59:36,294 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-01 14:59:36,318 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-01 14:59:36,330 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-01 14:59:36,348 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-01 14:59:36,352 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-01 14:59:36,354 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-01 14:59:36,355 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-01 14:59:36,368 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-01 14:59:36,371 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-01 14:59:36,383 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-01 14:59:36,385 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:36,386 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:36,386 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-01 14:59:36,389 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-01 14:59:36,391 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-01 14:59:36,403 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-01 14:59:36,405 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-01 14:59:36,407 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-01 14:59:36,409 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-01 14:59:36,419 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-01 14:59:36,421 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-01 14:59:45,292 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-01 14:59:45,327 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-01 14:59:45,334 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-01 14:59:45,351 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-01 14:59:45,361 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-01 14:59:45,382 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-01 14:59:45,393 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-01 14:59:45,397 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-01 14:59:45,404 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-01 14:59:45,417 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-01 14:59:45,425 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-01 14:59:45,441 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-01 14:59:45,448 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-01 14:59:45,452 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-01 14:59:45,455 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-01 14:59:45,463 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-01 14:59:45,466 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-01 14:59:45,480 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-01 14:59:45,482 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:45,483 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:45,484 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-01 14:59:45,489 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-01 14:59:45,492 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-01 14:59:45,502 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-01 14:59:45,506 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-01 14:59:45,508 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-01 14:59:45,511 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-01 14:59:45,520 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-01 14:59:45,523 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-01 14:59:45,534 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-01 14:59:45,534 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-01 14:59:45,537 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-01 14:59:45,540 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-01 14:59:45,542 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-01 14:59:45,547 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-01 14:59:45,565 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-01 14:59:45,571 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-01 14:59:45,584 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-01 14:59:45,587 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:45,588 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:45,589 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:45,590 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-01 14:59:45,607 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-01 14:59:45,612 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 14:59:45,775 - DEBUG - Using proactor: IocpProactor
+2025-01-01 14:59:47,695 - INFO - Browser opened
+2025-01-01 15:00:00,649 - INFO - Filled: Sabrina Pecanha
+2025-01-01 15:00:07,894 - ERROR - Timeout encountered: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input[name='Username']") to be visible
+  -     9 × locator resolved to hidden <input value="" dir="ltr" type="text" tabindex="0" jsname="YPqjbf" name="Username" autocomplete="off" spellcheck="false" class="whsOnd zHQkBf" aria-disabled="false" autocapitalize="none" data-initial-value="" data-initial-dir="ltr" aria-label="Criar um endereço do Gmail"/>
+
+2025-01-01 15:00:07,899 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,130 - ERROR - Error ao criar conta de email: AlineAzevedo7668080@gmail.com
+2025-01-01 15:00:09,132 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,156 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-01 15:00:09,234 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,242 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-01 15:00:09,243 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,250 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-01 15:00:09,250 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,258 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-01 15:00:09,258 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,265 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-01 15:00:09,265 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,272 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-01 15:00:09,273 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,284 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-01 15:00:09,285 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,295 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-01 15:00:09,295 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,302 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-01 15:00:09,303 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,311 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-01 15:00:09,312 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,320 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-01 15:00:09,321 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,328 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-01 15:00:09,329 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,337 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-01 15:00:09,338 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,345 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-01 15:00:09,346 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,354 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-01 15:00:09,354 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,365 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-01 15:00:09,366 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,373 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-01 15:00:09,374 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,381 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-01 15:00:09,383 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,402 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-01 15:00:09,404 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,412 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-01 15:00:09,413 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,420 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-01 15:00:09,422 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,430 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-01 15:00:09,431 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,436 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-01 15:00:09,437 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,450 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-01 15:00:09,451 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,458 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-01 15:00:09,459 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,467 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-01 15:00:09,467 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,475 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-01 15:00:09,475 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:09,483 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-01 15:00:09,484 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:26,986 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-01 15:00:26,998 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-01 15:00:27,002 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-01 15:00:27,012 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-01 15:00:27,014 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-01 15:00:27,020 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-01 15:00:27,021 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-01 15:00:27,022 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-01 15:00:27,025 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-01 15:00:27,032 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-01 15:00:27,035 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-01 15:00:27,043 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-01 15:00:27,045 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-01 15:00:27,047 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-01 15:00:27,051 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-01 15:00:27,056 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-01 15:00:27,059 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-01 15:00:27,071 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-01 15:00:27,073 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 15:00:27,074 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 15:00:27,074 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-01 15:00:27,077 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-01 15:00:27,080 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-01 15:00:27,090 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-01 15:00:27,093 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-01 15:00:27,095 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-01 15:00:27,097 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-01 15:00:27,107 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-01 15:00:27,109 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-01 15:00:27,117 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-01 15:00:27,118 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-01 15:00:27,119 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-01 15:00:27,121 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-01 15:00:27,122 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-01 15:00:27,124 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-01 15:00:27,140 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-01 15:00:27,145 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-01 15:00:27,157 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-01 15:00:27,160 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 15:00:27,161 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 15:00:27,162 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 15:00:27,162 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-01 15:00:27,174 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-01 15:00:27,176 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-01 15:00:27,325 - DEBUG - Using proactor: IocpProactor
+2025-01-01 15:00:29,121 - INFO - Browser opened
+2025-01-01 15:00:40,359 - INFO - Filled: Thais Gomes
+2025-01-01 15:00:43,046 - INFO - Input gmail filled
+2025-01-01 15:00:44,227 - INFO - Password filled
+2025-01-01 15:00:44,555 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-01 15:00:45,342 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/gmail?product=gmail&country=us&operator=any HTTP/1.1" 302 32
+2025-01-01 15:00:45,369 - DEBUG - https://5sim.net:443 "GET /404.html HTTP/1.1" 403 None
+2025-01-01 15:00:45,373 - ERROR - Erro ao buscar número: 403 Client Error: Forbidden for url: https://5sim.net/404.html
+2025-01-01 15:00:47,607 - ERROR - Error ao criar conta de email: AlineAzevedo7669921@gmail.com
+2025-01-01 15:00:47,608 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,632 - ERROR - Error ao criar conta de email: AlineAzevedo7668080@gmail.com
+2025-01-01 15:00:47,632 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,641 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-01 15:00:47,642 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,654 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-01 15:00:47,655 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,668 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-01 15:00:47,686 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,706 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-01 15:00:47,706 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,715 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-01 15:00:47,716 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,724 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-01 15:00:47,725 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,734 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-01 15:00:47,734 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,743 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-01 15:00:47,743 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,751 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-01 15:00:47,752 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,759 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-01 15:00:47,760 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,767 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-01 15:00:47,768 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,786 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-01 15:00:47,787 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,796 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-01 15:00:47,796 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,804 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-01 15:00:47,804 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,815 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-01 15:00:47,816 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,827 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-01 15:00:47,827 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,833 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-01 15:00:47,834 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,844 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-01 15:00:47,844 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,851 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-01 15:00:47,852 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,860 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-01 15:00:47,861 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,868 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-01 15:00:47,869 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,877 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-01 15:00:47,877 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,889 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-01 15:00:47,890 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,898 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-01 15:00:47,899 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,904 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-01 15:00:47,905 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,910 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-01 15:00:47,911 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,917 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-01 15:00:47,918 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-01 15:00:47,923 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-01 15:00:47,923 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
