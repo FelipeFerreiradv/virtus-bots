@@ -1,61 +1,29 @@
-from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, WebDriverException
 import logging
-import time
 import random
+import time
 from task import get_phone_number, get_verification_code, fetch_emails, connect_db, save_email
-import pyautogui as pg
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 GOOGLE_SIGNUP_URL = "https://accounts.google.com/signup"
 PROXY_SERVER = "ukGDVRlSLkZYfG4A:senha:rotating.proxyempire.io:9000"
-DEFAULT_WAIT_TIME = 120
+DEFAULT_WAIT_TIME = 5000
 
 class EmailAutomation:
     def __init__(self, proxy):
-        options = webdriver.FirefoxOptions()
-        # options.add_argument("--headless")
-        options.add_argument("--disable-automation")
-        options.add_argument("--disable-blink-features=AutomationControlled")  # Remove a detecção de automação
-        options.add_argument("--disable-infobars")  # Remove a mensagem "Controlado por automação"
-        options.add_argument("--disable-extensions")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--no-sandbox")
-        options.add_argument("-private")
-        options.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36")
+        self.playwright = sync_playwright().start()
+        self.browser = self.playwright.chromium.launch(
+            headless=False,
+            proxy={"server": proxy} if proxy else None
+        )
 
-        if proxy:
-            proxy_config = proxy.split(":")
-            if len(proxy_config) == 4:
-                user, password, ip, port = proxy_config
-                options.set_preference("network.proxy.type", 1)
-                options.set_preference("network.proxy.http", ip)
-                options.set_preference("network.proxy.http_port", int(port))
-                options.set_preference("network.proxy.ssl", ip)
-                options.set_preference("network.proxy.ssl_port", int(port))
-                options.set_preference("network.proxy.socks_username", user)
-                options.set_preference("network.proxy.socks_password", password)
-            else:
-                logging.error("Formato de proxy inválido. Por favor, revise a configuração.")
-        try:
-            service = Service(GeckoDriverManager().install())
-            self.driver = webdriver.Firefox(service=service, options=options)
-            logging.info("Navegador iniciado com sucesso")
-        except WebDriverException as e:
-            logging.error(f"Erro ao iniciar o navegador: {e}")
-            raise
+        self.content = self.browser.new_context()
+        self.page = self.content.new_page()
+        logging.info("Browser opened")
 
-    def create_email_account(self, email):
-        driver = self.driver
-        driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    def create_email_account(self, email, gmail):
         try:
             # abrir página de signup do Google
-            driver.get(GOOGLE_SIGNUP_URL)
-            wait = WebDriverWait(driver, DEFAULT_WAIT_TIME)
+            self.page.goto(GOOGLE_SIGNUP_URL)
 
             email_names = [
                 "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Fernanda", "Carla", "Patricia", "Luana", "Rita",
@@ -78,26 +46,37 @@ class EmailAutomation:
                 "Vilela", "Serrano", "Vieira", "Vargas", "Ribeiro", "Moreira", "Cavalcanti", "Tavares", "Pereira", "Pimentel"
             ]
 
+            first_name = random.choice(email_names)
+            last_name = random.choice(email_surnames)
+
             try:
-                first_name_input = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@id='firstName']")))
-                first_name_input.clear()
-                first_name_input.send_keys(random.choice(email_names))
-                last_name_input = wait.until(EC.presence_of_element_located((By.ID, "lastName")))
-                last_name_input.clear()
-                last_name_input.send_keys(random.choice(email_surnames))
-                next_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']")))
-                driver.execute_script("arguments[0].scrollIntoView();", next_button)
+                if not self.page.locator('input#day').is_visible():
+                    self.page.fill('input#firstName', first_name)
+                    self.page.fill('input#lastName', last_name)
+                    next_button = self.page.get_by_role('button')
+                    next_button.click()
+                    logging.info(f"Filled: {first_name} {last_name}")
+
+                self.page.wait_for_selector('input#day', timeout=DEFAULT_WAIT_TIME)
+                self.page.fill('input#day', str(random.randint(1,30)))
+                self.page.get_by_label('Mês').select_option("Janeiro")
+                self.page.fill("input#year", str(random.randint(1940, 2000)))
+                gender_select = self.page.locator("select[id = 'gender']")
+                gender_select.select_option(label="Homem")
                 next_button.click()
-            except TimeoutException as e:
-                logging.error(f"Timeout ao tentar encontrar o botão 'Next': {e}")
-                driver.save_screenshot("timeout_next_button.png")
-                return False
-            except Exception as e:
-                logging.error(f"Erro ao interagir com o botão 'Next': {e}")
-                driver.save_screenshot("unexpected_error_next_button.png")
-                return False
+
+                try:
+                    input_gmail = self.page.get_by_role("input[class = 'zHQkBf']")
+                    input_gmail.fill(gmail)
+                    logging.info(f"input founded")
+                except Exception as e:
+                    logging.error(f"Error to found input gmail: {e}")
+
+                return Falsed
+            except PlaywrightTimeoutError as e:
+                logging.error(f"Timeout encountered: {e}")
         except Exception as e:
-            logging.error(f"Erro ao criar conta de email: {email}")
+            logging.error(f"Error ao criar conta de email: {email}")
             return False
 
     def close(self):
@@ -125,7 +104,7 @@ def main():
             email = entry['email']
             senha = entry['senha']
             gmail = entry['primeiro_nome']
-            if not automation.create_email_account(email):
+            if not automation.create_email_account(email, gmail):
                 logging.warning(f"Tentativa de criar email {email} falhou. Prosseguindo para o próximo.")
     finally:
         if automation:
