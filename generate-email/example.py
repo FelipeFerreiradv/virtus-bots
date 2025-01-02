@@ -58,9 +58,9 @@ class EmailAutomation:
                     next_button.click()
                     logging.info(f"Filled: {first_name} {last_name}")
 
+                self.page.get_by_label('Mês').select_option("Janeiro")
                 self.page.wait_for_selector('input#day', timeout=DEFAULT_WAIT_TIME)
                 self.page.fill('input#day', str(random.randint(1,30)))
-                self.page.get_by_label('Mês').select_option("Janeiro")
                 self.page.fill("input#year", str(random.randint(1940, 2000)))
                 gender_select = self.page.locator("select[id = 'gender']")
                 gender_select.select_option(label="Homem")
@@ -76,6 +76,11 @@ class EmailAutomation:
                 logging.info("Password filled")
                 next_button.click()
 
+                self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
+                self.page.fill("input#phoneNumberId", str(get_phone_number()))
+                logging.info(f"Phone number filled: {str(get_phone_number())}")
+                next_button.click()
+            
                 if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
                     self.page.get_by_text("Crie seu próprio endereço do Gmail").click()
                     next_button_text.click()
@@ -85,25 +90,20 @@ class EmailAutomation:
                     next_button.click()
 
                     try:
-                        # self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
+                        self.page.locator("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
                         self.page.fill("input#phoneNumberId", str(get_phone_number()))
                         logging.info(f"Phone number filled: {get_phone_number()}")
                         next_button.click()
                     except Exception as e:
                         logging.erro(f"Not founded phone number {get_phone_number()}: {e}")
-
-                try:
-                    # self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
-                    self.page.fill("input#phoneNumberId", str(get_phone_number()))
-                    logging.info(f"Phone number filled: {get_phone_number()}")
-                    next_button.click()
-                except Exception as e:
-                    logging.erro(f"Not founded phone number {get_phone_number()}: {e}")
-
-                return False
             except PlaywrightTimeoutError as e:
                 logging.error(f"Timeout encountered: {e}")
+                self.content.clear_cookies()
+                self.content.clear_permissions()
+                return False
         except Exception as e:
+            self.content.clear_cookies()
+            self.content.clear_permissions()
             logging.error(f"Error ao criar conta de email: {email}")
             return False
 

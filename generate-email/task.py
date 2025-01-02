@@ -162,13 +162,16 @@ def get_phone_number(product="gmail", country="ru", operator="any"):
         }
 
         response = requests.get(
-            "https://5sim.net/v1/user/buy/activation", 
+            "https://5sim.net/v1/user/buy/activation",
             headers=headers, 
             params=params
         )
 
         response.raise_for_status()
         data = response.json()
+        logging.debug(f"Headers enviados: {headers}")
+        logging.debug(f"Parametros enviados: {params}")
+        logging.debug(f"Resposta completa enviados: {response}")
         phone = data.get('phone')
         if phone:
             logging.info(f"Número de telefone adquirido: {phone}")
