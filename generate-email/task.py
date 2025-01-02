@@ -151,7 +151,7 @@ def fetch_emails(db):
 def get_phone_number(product="gmail", country="ru", operator="any"):
     try:
         headers={
-            "Authorization": "Bearer" + API_KEY,
+            "Authorization": f"Bearer {API_KEY}",
             "Accept": 'application/json',
         }
            
