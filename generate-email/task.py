@@ -162,7 +162,7 @@ def get_phone_number(product="gmail", country="us", operator="any"):
         }
 
         response = requests.get(
-            "https://5sim.net/v1/user/buy/activation/gmail", headers=headers, params=params
+            "https://5sim.net/v1/user/buy/orders", headers=headers, params=params
         )
         response.raise_for_status()
         data = response.json()
