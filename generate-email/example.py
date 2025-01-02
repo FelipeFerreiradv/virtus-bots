@@ -76,7 +76,24 @@ class EmailAutomation:
                 logging.info("Password filled")
                 next_button.click()
 
+                if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
+                    self.page.get_by_text("Crie seu próprio endereço do Gmail").click()
+                    next_button_text.click()
+                    self.page.locator("input[name='Passwd']").fill(password)
+                    self.page.locator("input[name='PasswdAgain']").fill(password)
+                    logging.info("Password filled")
+                    next_button.click()
+
+                    try:
+                        # self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
+                        self.page.fill("input#phoneNumberId", str(get_phone_number()))
+                        logging.info(f"Phone number filled: {get_phone_number()}")
+                        next_button.click()
+                    except Exception as e:
+                        logging.erro(f"Not founded phone number {get_phone_number()}: {e}")
+
                 try:
+                    # self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
                     self.page.fill("input#phoneNumberId", str(get_phone_number()))
                     logging.info(f"Phone number filled: {get_phone_number()}")
                     next_button.click()

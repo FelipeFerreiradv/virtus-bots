@@ -148,10 +148,10 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number(product="gmail", country="us", operator="any"):
+def get_phone_number(product="gmail", country="ru", operator="any"):
     try:
         headers={
-            "Authorization": f"Bearer {API_KEY}",
+            "Authorization": "Bearer" + API_KEY,
             "Accept": 'application/json',
         }
            
@@ -162,8 +162,11 @@ def get_phone_number(product="gmail", country="us", operator="any"):
         }
 
         response = requests.get(
-            "https://5sim.net/v1/user/buy/orders", headers=headers, params=params
+            "https://5sim.net/v1/user/buy/activation", 
+            headers=headers, 
+            params=params
         )
+
         response.raise_for_status()
         data = response.json()
         phone = data.get('phone')
@@ -174,6 +177,7 @@ def get_phone_number(product="gmail", country="us", operator="any"):
         return None
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao buscar número: {e}")
+        print(response.text)
         return None
 
 def get_verification_code(phone_number, ):
