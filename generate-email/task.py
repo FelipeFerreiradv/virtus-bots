@@ -148,14 +148,30 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number():
+def get_phone_number(product="gmail", country="ru", operator="any"):
     try:
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Accept": 'application/json',
+        }
+           
+        params={
+            "product": product,
+            "country": country,
+            "operator": operator
+        }
+
         response = requests.get(
-            "https://5sim.net/v1/user/buy/activation/gmail",
-            headers={"Authorization": f"Bearer {API_KEY}"}
+            "https://5sim.net/v1/user/buy/activation",
+            headers=headers, 
+            params=params
         )
+
         response.raise_for_status()
         data = response.json()
+        logging.debug(f"Headers enviados: {headers}")
+        logging.debug(f"Parametros enviados: {params}")
+        logging.debug(f"Resposta completa enviados: {response}")
         phone = data.get('phone')
         if phone:
             logging.info(f"Número de telefone adquirido: {phone}")
@@ -164,13 +180,14 @@ def get_phone_number():
         return None
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao buscar número: {e}")
+        print(response.text)
         return None
 
-def get_verification_code(phone_number):
+def get_verification_code(phone_number, ):
     try:
-        for _ in range(10):  # Tentar por 10 vezes
+        for _ in range(10):
             response = requests.get(
-                f"https://5sim.net/v1/user/check/{phone_number}", 
+                f"https://5sim.net/v1/user/buy/activation", 
                 headers={"Authorization": f"Bearer {API_KEY}"}
             )
             response.raise_for_status()
@@ -184,7 +201,6 @@ def get_verification_code(phone_number):
         logging.error(f"Erro ao buscar código: {e}")
         return None
 
-# Execução principal
 if __name__ == "__main__":
     db = connect_db()
     if db:
