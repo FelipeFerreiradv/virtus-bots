@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import os
 import time
 import logging
+import cloudscraper
 
 # Configuração do logger
 logging.basicConfig(
@@ -179,11 +180,12 @@ def get_phone_number(product="google", country=f"{random.choice(RANDOM_COUNTRIES
 
         data = response.json()
 
+        phone = data.get('phone')
+        id = data.get('id')
+        
         logging.debug(f"Headers enviados: {headers}")
         logging.debug(f"Parametros enviados: {params}")
         logging.debug(f"Resposta completa enviados: {response}")
-        phone = data.get('phone')
-        id = data.get('id')
         if phone and id:
             logging.info(f"Número de telefone e id adquirido: {phone} | {id}")
             return phone, id
