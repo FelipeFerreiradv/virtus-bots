@@ -17,11 +17,12 @@ logging.basicConfig(
 
 # Carregar variáveis de ambiente
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+API_KEY_5SIM = os.getenv("API_KEY_5SIM")
 DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
 DB_USER = os.getenv("DB_USER", "root")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 DB_NAME = os.getenv("DB_NAME", "bot_email_generate")
+RANDOM_COUNTRIES = ["philippines", "ethiopia", "vietnam", "indonesia", "azerbaijan", "cambodia", "uzbekistan", "lithuania", "tanzania"]
 
 # Instância global do Faker
 faker = Faker()
@@ -84,26 +85,20 @@ def save_email(db, email, senha, status_shadow):
     except mysql.connector.Error as e:
         logging.error(f"Erro ao salvar email no banco de dados: {e}")
 
-def generate_emails(base_email, amount, db):
-    emails_generated = []
-    for _ in range(amount):
-        new_email = f"{base_email}{random.randint(1000, 9999)}@gmail.com"
-        senha = faker.password()
-        save_email(db, new_email, senha, "unknown")
-        emails_generated.append((new_email, senha))
-    logging.info(f"Total de emails gerados: {len(emails_generated)}")
-    return emails_generated
-
-def generate_email_set(email_count, db):
+def generate_random_names():
     email_names = [
-        "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Fernanda", "Carla", "Patricia", "Luana", "Rita",
-        "Mariana", "Catarina", "Luciana", "Marta", "Juliana", "Vanessa", "Tania", "Simone", "Isabela", "Raquel",
-        "Larissa", "Aline", "Tatiane", "Camila", "Monique", "Daniele", "Caroline", "Bianca", "Renata", "Elaine",
-        "Lúcia", "Adriana", "Sandra", "Cristiane", "Sabrina", "Lilian", "Letícia", "Rosana", "Márcia", "Sílvia",
-        "Natalia", "Priscila", "Cíntia", "Marina", "Verônica", "Michele", "Juliana", "Paula", "Kelly", "Cláudia",
-        "Ester", "Joana", "Gláucia", "Rafaela", "Gabrielle", "Luciane", "Elaine", "Mariane", "Jéssica", "Kátia",
-        "Thais", "Silvia", "Eliane", "Andreia", "Cleusa", "Vilma", "Lorena", "Roseli", "Sueli", "Neide", "Vera"
+    "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Fernanda", "Carla", "Patricia", "Luana", "Rita",
+    "Mariana", "Catarina", "Luciana", "Marta", "Juliana", "Vanessa", "Tania", "Simone", "Isabela", "Raquel",
+    "Larissa", "Aline", "Tatiane", "Camila", "Monique", "Daniele", "Caroline", "Bianca", "Renata", "Elaine",
+    "Lúcia", "Adriana", "Sandra", "Cristiane", "Sabrina", "Lilian", "Letícia", "Rosana", "Márcia", "Sílvia",
+    "Natalia", "Priscila", "Cíntia", "Marina", "Verônica", "Michele", "Juliana", "Paula", "Kelly", "Cláudia",
+    "Ester", "Joana", "Gláucia", "Rafaela", "Gabrielle", "Luciane", "Elaine", "Mariane", "Jéssica", "Kátia",
+    "Thais", "Silvia", "Eliane", "Andreia", "Cleusa", "Vilma", "Lorena", "Roseli", "Sueli", "Neide", "Vera"
     ]
+
+    return random.choice(email_names)
+
+def generate_random_surnames():
     email_surnames = [
     "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Almeida", "Rodrigues", "Souza", "Lima", "Gomes",
     "Martins", "Fernandes", "Carvalho", "Melo", "Ribeiro", "Nascimento", "Araujo", "Dias", "Lopes", "Barbosa",
@@ -115,9 +110,23 @@ def generate_email_set(email_count, db):
     "Siqueira", "Salles", "Borges", "Assis", "Fonseca", "Valente", "Mota", "Fagundes", "Galvão", "Santiago", "Xavier",
     "Vilela", "Serrano", "Vieira", "Vargas", "Ribeiro", "Moreira", "Cavalcanti", "Tavares", "Pereira", "Pimentel"
     ]
+
+    return random.choice(email_surnames)
+
+def generate_emails(base_email, amount, db):
+    emails_generated = []
+    for _ in range(amount):
+        new_email = f"{base_email}{random.randint(1000, 9999)}@gmail.com"
+        senha = faker.password()
+        save_email(db, new_email, senha, "unknown")
+        emails_generated.append((new_email, senha))
+    logging.info(f"Total de emails gerados: {len(emails_generated)}")
+    return emails_generated
+
+def generate_email_set(email_count, db):
     emails_to_generate = []
     for _ in range(email_count):
-        base_email = f"{random.choice(email_names)}{random.choice(email_surnames)}{random.randint(100, 999)}"
+        base_email = f"{generate_random_names()}{generate_random_surnames()}{random.randint(100, 999)}"
         emails = generate_emails(base_email, 5, db)
         emails_to_generate.extend(emails)
     return emails_to_generate
@@ -148,49 +157,58 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number(product="gmail", country="ru", operator="any"):
+def get_phone_number(product="google", country=f"{random.choice(RANDOM_COUNTRIES)}", operator="any"):
     try:
-        headers={
-            "Authorization": f"Bearer {API_KEY}",
-            "Accept": 'application/json',
+        headers = {
+            'Authorization': f'Bearer {API_KEY_5SIM}',
+            'Accept': 'application/json',
         }
            
         params={
-            "product": product,
             "country": country,
-            "operator": operator
+            "operator": operator,
+            "product": product,
         }
 
         response = requests.get(
-            "https://5sim.net/v1/user/buy/activation",
+            f"https://5sim.net/v1/user/buy/activation/{country}/{operator}/{product}",
             headers=headers, 
-            params=params
         )
 
         response.raise_for_status()
+
         data = response.json()
+
         logging.debug(f"Headers enviados: {headers}")
         logging.debug(f"Parametros enviados: {params}")
         logging.debug(f"Resposta completa enviados: {response}")
         phone = data.get('phone')
-        if phone:
-            logging.info(f"Número de telefone adquirido: {phone}")
-            return phone
-        logging.warning("Número de telefone não disponível.")
+        id = data.get('id')
+        if phone and id:
+            logging.info(f"Número de telefone e id adquirido: {phone} | {id}")
+            return phone, id
+        logging.warning("Número de telefone e id não disponível.")
         return None
     except requests.exceptions.RequestException as e:
-        logging.error(f"Erro ao buscar número: {e}")
+        logging.error(f"Erro ao buscar número e id: {e}")
         print(response.text)
         return None
 
-def get_verification_code(phone_number, ):
+def get_verification_code():
     try:
         for _ in range(10):
+            id= get_phone_number()
+
+            headers = {
+            'Authorization': f'Bearer {API_KEY_5SIM}',
+            'Accept': 'application/json',
+            }
+
             response = requests.get(
-                f"https://5sim.net/v1/user/buy/activation", 
-                headers={"Authorization": f"Bearer {API_KEY}"}
+                f'https://5sim.net/v1/user/check/{id[1]}', headers=headers
             )
             response.raise_for_status()
+
             data = response.json()
             if 'sms' in data and len(data['sms']) > 0:
                 return data['sms'][0]['code']
@@ -200,7 +218,7 @@ def get_verification_code(phone_number, ):
     except Exception as e:
         logging.error(f"Erro ao buscar código: {e}")
         return None
-
+    
 if __name__ == "__main__":
     db = connect_db()
     if db:
