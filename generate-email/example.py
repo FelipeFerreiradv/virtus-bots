@@ -1,19 +1,24 @@
 import logging
 import random
 import time
-from task import get_phone_number, get_verification_code, fetch_emails, connect_db, save_email
+from task import generate_random_names, generate_random_surnames, get_phone_number, get_verification_code, fetch_emails, connect_db, save_email
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 GOOGLE_SIGNUP_URL = "https://accounts.google.com/signup"
-PROXY_SERVER = "ukGDVRlSLkZYfG4A:senha:rotating.proxyempire.io:9000"
+PROXY_SERVER = "Itc6tLLIatUoR93k:wifi;us;;;newland@rotating.proxyempire.io:9000"
 DEFAULT_WAIT_TIME = 5000
+PHONE_NUMBER_AND_ID = get_phone_number()
 
 class EmailAutomation:
-    def __init__(self, proxy):
+    def __init__(self, proxy, proxy_username, proxy_password):
         self.playwright = sync_playwright().start()
         self.browser = self.playwright.chromium.launch(
             headless=False,
-            proxy={"server": proxy} if proxy else None
+            proxy={
+                "server": proxy,
+                "username": proxy_username,
+                "password": proxy_password
+                } if proxy else None
         )
 
         self.content = self.browser.new_context()
@@ -25,29 +30,8 @@ class EmailAutomation:
             # abrir página de signup do Google
             self.page.goto(GOOGLE_SIGNUP_URL)
 
-            email_names = [
-                "Ana", "Maria", "Beatriz", "Julia", "Gabriela", "Fernanda", "Carla", "Patricia", "Luana", "Rita",
-                "Mariana", "Catarina", "Luciana", "Marta", "Juliana", "Vanessa", "Tania", "Simone", "Isabela", "Raquel",
-                "Larissa", "Aline", "Tatiane", "Camila", "Monique", "Daniele", "Caroline", "Bianca", "Renata", "Elaine",
-                "Lúcia", "Adriana", "Sandra", "Cristiane", "Sabrina", "Lilian", "Letícia", "Rosana", "Márcia", "Sílvia",
-                "Natalia", "Priscila", "Cíntia", "Marina", "Verônica", "Michele", "Juliana", "Paula", "Kelly", "Cláudia",
-                "Ester", "Joana", "Gláucia", "Rafaela", "Gabrielle", "Luciane", "Elaine", "Mariane", "Jéssica", "Kátia",
-                "Thais", "Silvia", "Eliane", "Andreia", "Cleusa", "Vilma", "Lorena", "Roseli", "Sueli", "Neide", "Vera"
-            ]
-            email_surnames = [
-                "Silva", "Santos", "Oliveira", "Pereira", "Costa", "Almeida", "Rodrigues", "Souza", "Lima", "Gomes",
-                "Martins", "Fernandes", "Carvalho", "Melo", "Ribeiro", "Nascimento", "Araujo", "Dias", "Lopes", "Barbosa",
-                "Ferreira", "Batista", "Castro", "Pinto", "Cavalcanti", "Vieira", "Freitas", "Moreira", "Teixeira", "Machado",
-                "Queiroz", "Maciel", "Ramos", "Figueiredo", "Viana", "Moura", "Cunha", "Macedo", "Nunes", "Pereira", "Santos",
-                "Tavares", "Marques", "Brito", "Gonçalves", "Zanetti", "Serrano", "Lima", "Rosa", "Brandão", "Azevedo", 
-                "Pimentel", "Simões", "Cunha", "Barreto", "Pecanha", "Rochas", "Vasquez", "Farias", "Monteiro", "Martins",
-                "Lopes", "Morais", "Correia", "Pinheiro", "Nascimento", "Dias", "Cunha", "Lima", "Barbosa", "Silveira",
-                "Siqueira", "Salles", "Borges", "Assis", "Fonseca", "Valente", "Mota", "Fagundes", "Galvão", "Santiago", "Xavier",
-                "Vilela", "Serrano", "Vieira", "Vargas", "Ribeiro", "Moreira", "Cavalcanti", "Tavares", "Pereira", "Pimentel"
-            ]
-
-            first_name = random.choice(email_names)
-            last_name = random.choice(email_surnames)
+            first_name = generate_random_names()
+            last_name = generate_random_surnames()
 
             try:
                 if not self.page.locator('input#day').is_visible():
@@ -74,36 +58,38 @@ class EmailAutomation:
                 self.page.locator("input[name='Passwd']").fill(password)
                 self.page.locator("input[name='PasswdAgain']").fill(password)
                 logging.info("Password filled")
+                self.page.wait_for_timeout(10000)
                 next_button.click()
 
+                # if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
+                #     self.page.get_by_text("Crie seu próprio endereço do Gmail").click()
+                #     next_button_text.click()
+                #     self.page.locator("input[name='Passwd']").fill(password)
+                #     self.page.locator("input[name='PasswdAgain']").fill(password)
+                #     logging.info("Password filled")
+                #     next_button.click()
+
+                #     self.page.locator("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
+                #     self.page.fill("input#phoneNumberId", str(get_phone_number()))
+                #     logging.info(f"Phone number filled: {get_phone_number()}")
+                #     next_button.click()
+                # else:
                 self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
-                self.page.fill("input#phoneNumberId", str(get_phone_number()))
-                logging.info(f"Phone number filled: {str(get_phone_number())}")
+                self.page.fill("input#phoneNumberId", str(PHONE_NUMBER_AND_ID[0]))
+                logging.info(f"Phone number filled: {str(PHONE_NUMBER_AND_ID[0])}")
                 next_button.click()
-            
-                if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
-                    self.page.get_by_text("Crie seu próprio endereço do Gmail").click()
-                    next_button_text.click()
-                    self.page.locator("input[name='Passwd']").fill(password)
-                    self.page.locator("input[name='PasswdAgain']").fill(password)
-                    logging.info("Password filled")
-                    next_button.click()
 
-                    try:
-                        self.page.locator("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
-                        self.page.fill("input#phoneNumberId", str(get_phone_number()))
-                        logging.info(f"Phone number filled: {get_phone_number()}")
-                        next_button.click()
-                    except Exception as e:
-                        logging.erro(f"Not founded phone number {get_phone_number()}: {e}")
+                try:
+                    self.page.wait_for_selector("input#code", timeout=5000)
+                    self.page.fill("input#code", PHONE_NUMBER_AND_ID[1])
+                    next_button.click()
+                except Exception as e:
+                    logging.error(f"Error to fill code number: {e}")
+            
             except PlaywrightTimeoutError as e:
                 logging.error(f"Timeout encountered: {e}")
-                self.content.clear_cookies()
-                self.content.clear_permissions()
                 return False
         except Exception as e:
-            self.content.clear_cookies()
-            self.content.clear_permissions()
             logging.error(f"Error ao criar conta de email: {email}")
             return False
 
@@ -124,10 +110,10 @@ def main():
         logging.error("Nenhum email encontrado para o processamento")
         db.close()
         return
-
+    
     automation = None
     try:
-        automation = EmailAutomation(proxy=None)
+        automation = EmailAutomation(proxy=None, proxy_username="gabrielmanna1994@gmail.com", proxy_password="QGN@bh2YJYLQxM8")
         for entry in emails:
             email = entry['email']
             password = entry['senha']
