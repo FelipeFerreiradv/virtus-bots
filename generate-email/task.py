@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 import os
 import time
 import logging
-import cloudscraper
 
 # Configuração do logger
 logging.basicConfig(
@@ -158,7 +157,7 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number(product="google", country=f"{random.choice(RANDOM_COUNTRIES)}", operator="any"):
+def get_phone_number(product="google", country=f"usa", operator="any"):
     try:
         headers = {
             'Authorization': f'Bearer {API_KEY_5SIM}',
