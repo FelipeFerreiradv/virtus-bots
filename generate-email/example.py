@@ -38,16 +38,16 @@ class EmailAutomation:
                     self.page.fill('input#firstName', first_name)
                     self.page.fill('input#lastName', last_name)
                     next_button = self.page.get_by_role('button')
-                    next_button_text = self.page.get_by_text("Próxima")
+                    next_button_text = self.page.get_by_text("Next")
                     next_button.click()
                     logging.info(f"Filled: {first_name} {last_name}")
 
-                self.page.get_by_label('Mês').select_option("Janeiro")
+                self.page.get_by_label('Month').select_option("January")
                 self.page.wait_for_selector('input#day', timeout=DEFAULT_WAIT_TIME)
                 self.page.fill('input#day', str(random.randint(1,30)))
                 self.page.fill("input#year", str(random.randint(1940, 2000)))
                 gender_select = self.page.locator("select[id = 'gender']")
-                gender_select.select_option(label="Homem")
+                gender_select.select_option(label="Male")
                 next_button.click()
                 self.page.wait_for_load_state()
                 self.page.wait_for_selector("input[name='Username']", timeout=DEFAULT_WAIT_TIME)
@@ -58,7 +58,7 @@ class EmailAutomation:
                 self.page.locator("input[name='Passwd']").fill(password)
                 self.page.locator("input[name='PasswdAgain']").fill(password)
                 logging.info("Password filled")
-                self.page.wait_for_timeout(10000)
+                time.sleep(5)
                 next_button.click()
 
                 # if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
@@ -81,7 +81,7 @@ class EmailAutomation:
 
                 try:
                     self.page.wait_for_selector("input#code", timeout=5000)
-                    self.page.fill("input#code", PHONE_NUMBER_AND_ID[1])
+                    self.page.fill("input#code", get_verification_code())
                     next_button.click()
                 except Exception as e:
                     logging.error(f"Error to fill code number: {e}")
