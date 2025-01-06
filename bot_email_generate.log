@@ -11830,3 +11830,1157 @@ Call log:
 2025-01-02 15:00:51,460 - DEBUG - https://5sim.net:443 "GET /404.html HTTP/1.1" 403 None
 2025-01-02 15:00:51,462 - ERROR - Erro ao buscar número: 403 Client Error: Forbidden for url: https://5sim.net/404.html
 >>>>>>> cac208cb8ac76544add9ff03c7626465001105dd
+2025-01-05 14:50:23,143 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:50:23,169 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:50:23,261 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:50:23,271 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:50:23,274 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:50:23,286 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:50:23,289 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:50:23,290 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:50:23,294 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:50:23,301 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:50:23,304 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:50:23,311 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:50:23,314 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:50:23,318 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:50:23,322 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:50:23,329 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:50:23,334 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:50:23,343 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:50:23,347 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:50:23,348 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:50:23,351 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:50:23,355 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:50:23,359 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:50:23,369 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:50:23,372 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:50:23,373 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:50:23,376 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:50:23,388 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:50:23,392 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:50:23,403 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:50:23,405 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:50:23,407 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:50:23,410 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:50:23,411 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:50:23,417 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:50:23,436 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:50:23,442 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:50:23,457 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:50:23,460 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:50:23,461 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:50:23,462 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:50:23,462 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:50:23,476 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:50:23,478 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:50:23,708 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:50:34,878 - ERROR - Erro ao buscar número e id: HTTPSConnectionPool(host='5sim.net', port=443): Max retries exceeded with url: /v1/user/buy/activation/cambodia/any/google (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021BDC6C0AD0>: Failed to resolve '5sim.net' ([Errno 11001] getaddrinfo failed)"))
+2025-01-05 14:51:36,149 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:51:36,159 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:51:36,162 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:51:36,170 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:51:36,172 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:51:36,181 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:51:36,183 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:51:36,186 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:51:36,190 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:51:36,195 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:51:36,197 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:51:36,207 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:51:36,209 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:51:36,211 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:51:36,213 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:51:36,222 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:51:36,226 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:51:36,237 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:51:36,240 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:51:36,240 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:51:36,242 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:51:36,245 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:51:36,247 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:51:36,260 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:51:36,263 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:51:36,265 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:51:36,268 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:51:36,279 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:51:36,283 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:51:36,293 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:51:36,294 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:51:36,296 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:51:36,298 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:51:36,301 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:51:36,304 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:51:36,327 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:51:36,334 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:51:36,352 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:51:36,357 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:51:36,358 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:51:36,358 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:51:36,359 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:51:36,370 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:51:36,376 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:51:36,624 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:51:37,934 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/cambodia/any/google HTTP/1.1" 200 None
+2025-01-05 14:51:37,944 - DEBUG - Headers enviados: {'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ0Mzc3ODMsImlhdCI6MTczMjkwMTc4MywicmF5IjoiNjUwMzM0YTIwMTEyNTJmZjQ4Yzg3MWY1N2JlYTkwZGEiLCJzdWIiOjIyMDM2NjV9.yYDpzHJAIyb1WJqDDVqzVVAZUKfAeS7yYAwlPj57GlSYjEZqg-lf_VN6h5QUafW9Y2qVmcFNlihEUrQKBvVqdAdck6OZjKbrf-bwe0aa5h5KXEwcdKwkpmWipLHEgd1J_lByekBbOK5iIO-TjJWlB2RrgubaeEL9p2TbEhecUVAF5v-xApfRtNFQu1QT1uE_cUwlbbn-P-1n3I_OjZCWayJfJpI2ZZMLvbh_B788EYP_7RRoemPI3m3vuNQYMZkVio7dGb1-ZMNogmkV_DVvXb9uvO_N_Nt1x0bnIBv0UggDTnQy_kQ9097H8w41Rc-gxwRJ7pNkWu7rMVSFcdyUow', 'Accept': 'application/json'}
+2025-01-05 14:51:37,950 - DEBUG - Parametros enviados: {'country': 'cambodia', 'operator': 'any', 'product': 'google'}
+2025-01-05 14:51:37,951 - DEBUG - Resposta completa enviados: <Response [200]>
+2025-01-05 14:51:37,953 - INFO - Número de telefone e id adquirido: +855316547415 | 712049025
+2025-01-05 14:52:22,637 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:52:22,661 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:52:22,664 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:52:22,681 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:52:22,686 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:52:22,697 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:52:22,699 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:52:22,700 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:52:22,704 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:52:22,711 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:52:22,712 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:52:22,725 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:52:22,727 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:52:22,729 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:52:22,731 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:52:22,737 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:52:22,740 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:52:22,749 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:52:22,752 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:52:22,753 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:52:22,753 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:52:22,756 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:52:22,758 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:52:22,771 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:52:22,773 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:52:22,776 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:52:22,778 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:52:22,787 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:52:22,789 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:52:22,795 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:52:22,796 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:52:22,799 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:52:22,803 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:52:22,804 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:52:22,808 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:52:22,825 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:52:22,830 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:52:22,843 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:52:22,846 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:52:22,846 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:52:22,847 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:52:22,847 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:52:22,859 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:52:22,862 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:52:23,034 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:52:34,146 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/lithuania/any/google HTTP/1.1" 200 None
+2025-01-05 14:52:34,152 - DEBUG - Headers enviados: {'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ0Mzc3ODMsImlhdCI6MTczMjkwMTc4MywicmF5IjoiNjUwMzM0YTIwMTEyNTJmZjQ4Yzg3MWY1N2JlYTkwZGEiLCJzdWIiOjIyMDM2NjV9.yYDpzHJAIyb1WJqDDVqzVVAZUKfAeS7yYAwlPj57GlSYjEZqg-lf_VN6h5QUafW9Y2qVmcFNlihEUrQKBvVqdAdck6OZjKbrf-bwe0aa5h5KXEwcdKwkpmWipLHEgd1J_lByekBbOK5iIO-TjJWlB2RrgubaeEL9p2TbEhecUVAF5v-xApfRtNFQu1QT1uE_cUwlbbn-P-1n3I_OjZCWayJfJpI2ZZMLvbh_B788EYP_7RRoemPI3m3vuNQYMZkVio7dGb1-ZMNogmkV_DVvXb9uvO_N_Nt1x0bnIBv0UggDTnQy_kQ9097H8w41Rc-gxwRJ7pNkWu7rMVSFcdyUow', 'Accept': 'application/json'}
+2025-01-05 14:52:34,156 - DEBUG - Parametros enviados: {'country': 'lithuania', 'operator': 'any', 'product': 'google'}
+2025-01-05 14:52:34,157 - DEBUG - Resposta completa enviados: <Response [200]>
+2025-01-05 14:52:34,161 - INFO - Número de telefone e id adquirido: +37060899007 | 712049557
+2025-01-05 14:52:34,195 - DEBUG - Using proactor: IocpProactor
+2025-01-05 14:52:49,631 - INFO - Browser opened
+2025-01-05 14:52:53,271 - ERROR - Error ao criar conta de email: AlineAzevedo7669921@gmail.com
+2025-01-05 14:52:53,282 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,292 - ERROR - Error ao criar conta de email: AlineAzevedo7668080@gmail.com
+2025-01-05 14:52:53,299 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,311 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-05 14:52:53,311 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,323 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-05 14:52:53,324 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,338 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-05 14:52:53,338 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,345 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-05 14:52:53,345 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,363 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-05 14:52:53,366 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,388 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-05 14:52:53,389 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,396 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-05 14:52:53,396 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,408 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-05 14:52:53,409 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,418 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-05 14:52:53,419 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,427 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-05 14:52:53,428 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,437 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-05 14:52:53,437 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,445 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-05 14:52:53,446 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,456 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-05 14:52:53,457 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,464 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-05 14:52:53,465 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,473 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-05 14:52:53,474 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,481 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-05 14:52:53,483 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,490 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-05 14:52:53,490 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,495 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-05 14:52:53,495 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,503 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-05 14:52:53,503 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,510 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-05 14:52:53,511 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,519 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-05 14:52:53,519 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,526 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-05 14:52:53,527 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,535 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-05 14:52:53,535 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,542 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-05 14:52:53,543 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,551 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-05 14:52:53,551 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,559 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-05 14:52:53,559 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,567 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-05 14:52:53,568 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,574 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-05 14:52:53,575 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,579 - ERROR - Error ao criar conta de email: RoseliRochas3422028@gmail.com
+2025-01-05 14:52:53,580 - WARNING - Tentativa de criar email RoseliRochas3422028@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,589 - ERROR - Error ao criar conta de email: RoseliRochas3424455@gmail.com
+2025-01-05 14:52:53,589 - WARNING - Tentativa de criar email RoseliRochas3424455@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,596 - ERROR - Error ao criar conta de email: RoseliRochas3429504@gmail.com
+2025-01-05 14:52:53,599 - WARNING - Tentativa de criar email RoseliRochas3429504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,606 - ERROR - Error ao criar conta de email: RoseliRochas3424842@gmail.com
+2025-01-05 14:52:53,606 - WARNING - Tentativa de criar email RoseliRochas3424842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,612 - ERROR - Error ao criar conta de email: RoseliRochas3426570@gmail.com
+2025-01-05 14:52:53,612 - WARNING - Tentativa de criar email RoseliRochas3426570@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,621 - ERROR - Error ao criar conta de email: DanieleSimões6409771@gmail.com
+2025-01-05 14:52:53,621 - WARNING - Tentativa de criar email DanieleSimões6409771@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,635 - ERROR - Error ao criar conta de email: DanieleSimões6409394@gmail.com
+2025-01-05 14:52:53,636 - WARNING - Tentativa de criar email DanieleSimões6409394@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,644 - ERROR - Error ao criar conta de email: DanieleSimões6409829@gmail.com
+2025-01-05 14:52:53,645 - WARNING - Tentativa de criar email DanieleSimões6409829@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,661 - ERROR - Error ao criar conta de email: DanieleSimões6403040@gmail.com
+2025-01-05 14:52:53,662 - WARNING - Tentativa de criar email DanieleSimões6403040@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,672 - ERROR - Error ao criar conta de email: DanieleSimões6406066@gmail.com
+2025-01-05 14:52:53,673 - WARNING - Tentativa de criar email DanieleSimões6406066@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,680 - ERROR - Error ao criar conta de email: VerônicaMota7445902@gmail.com
+2025-01-05 14:52:53,682 - WARNING - Tentativa de criar email VerônicaMota7445902@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,690 - ERROR - Error ao criar conta de email: VerônicaMota7446329@gmail.com
+2025-01-05 14:52:53,691 - WARNING - Tentativa de criar email VerônicaMota7446329@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,702 - ERROR - Error ao criar conta de email: VerônicaMota7443509@gmail.com
+2025-01-05 14:52:53,702 - WARNING - Tentativa de criar email VerônicaMota7443509@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,709 - ERROR - Error ao criar conta de email: VerônicaMota7448788@gmail.com
+2025-01-05 14:52:53,709 - WARNING - Tentativa de criar email VerônicaMota7448788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,718 - ERROR - Error ao criar conta de email: VerônicaMota7443027@gmail.com
+2025-01-05 14:52:53,719 - WARNING - Tentativa de criar email VerônicaMota7443027@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,725 - ERROR - Error ao criar conta de email: MartaMartins1648913@gmail.com
+2025-01-05 14:52:53,725 - WARNING - Tentativa de criar email MartaMartins1648913@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,730 - ERROR - Error ao criar conta de email: MartaMartins1646175@gmail.com
+2025-01-05 14:52:53,732 - WARNING - Tentativa de criar email MartaMartins1646175@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,739 - ERROR - Error ao criar conta de email: MartaMartins1649206@gmail.com
+2025-01-05 14:52:53,739 - WARNING - Tentativa de criar email MartaMartins1649206@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,746 - ERROR - Error ao criar conta de email: MartaMartins1644516@gmail.com
+2025-01-05 14:52:53,746 - WARNING - Tentativa de criar email MartaMartins1644516@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,755 - ERROR - Error ao criar conta de email: MartaMartins1642400@gmail.com
+2025-01-05 14:52:53,756 - WARNING - Tentativa de criar email MartaMartins1642400@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,762 - ERROR - Error ao criar conta de email: JuliaBrito7872768@gmail.com
+2025-01-05 14:52:53,762 - WARNING - Tentativa de criar email JuliaBrito7872768@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,772 - ERROR - Error ao criar conta de email: JuliaBrito7879013@gmail.com
+2025-01-05 14:52:53,772 - WARNING - Tentativa de criar email JuliaBrito7879013@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,779 - ERROR - Error ao criar conta de email: JuliaBrito7876778@gmail.com
+2025-01-05 14:52:53,785 - WARNING - Tentativa de criar email JuliaBrito7876778@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,792 - ERROR - Error ao criar conta de email: JuliaBrito7879258@gmail.com
+2025-01-05 14:52:53,793 - WARNING - Tentativa de criar email JuliaBrito7879258@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,802 - ERROR - Error ao criar conta de email: ElaineTeixeira4002929@gmail.com
+2025-01-05 14:52:53,803 - WARNING - Tentativa de criar email ElaineTeixeira4002929@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,811 - ERROR - Error ao criar conta de email: ElaineTeixeira4001763@gmail.com
+2025-01-05 14:52:53,811 - WARNING - Tentativa de criar email ElaineTeixeira4001763@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,820 - ERROR - Error ao criar conta de email: ElaineTeixeira4007151@gmail.com
+2025-01-05 14:52:53,821 - WARNING - Tentativa de criar email ElaineTeixeira4007151@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,828 - ERROR - Error ao criar conta de email: ElaineTeixeira4009326@gmail.com
+2025-01-05 14:52:53,828 - WARNING - Tentativa de criar email ElaineTeixeira4009326@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,838 - ERROR - Error ao criar conta de email: ElaineTeixeira4004698@gmail.com
+2025-01-05 14:52:53,839 - WARNING - Tentativa de criar email ElaineTeixeira4004698@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,847 - ERROR - Error ao criar conta de email: JulianaFagundes1022404@gmail.com
+2025-01-05 14:52:53,849 - WARNING - Tentativa de criar email JulianaFagundes1022404@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,857 - ERROR - Error ao criar conta de email: JulianaFagundes1025752@gmail.com
+2025-01-05 14:52:53,857 - WARNING - Tentativa de criar email JulianaFagundes1025752@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,865 - ERROR - Error ao criar conta de email: JulianaFagundes1021991@gmail.com
+2025-01-05 14:52:53,867 - WARNING - Tentativa de criar email JulianaFagundes1021991@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,874 - ERROR - Error ao criar conta de email: JulianaFagundes1021512@gmail.com
+2025-01-05 14:52:53,874 - WARNING - Tentativa de criar email JulianaFagundes1021512@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,879 - ERROR - Error ao criar conta de email: JulianaFagundes1028788@gmail.com
+2025-01-05 14:52:53,882 - WARNING - Tentativa de criar email JulianaFagundes1028788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,889 - ERROR - Error ao criar conta de email: SílviaMonteiro8125149@gmail.com
+2025-01-05 14:52:53,890 - WARNING - Tentativa de criar email SílviaMonteiro8125149@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,895 - ERROR - Error ao criar conta de email: SílviaMonteiro8121186@gmail.com
+2025-01-05 14:52:53,895 - WARNING - Tentativa de criar email SílviaMonteiro8121186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,905 - ERROR - Error ao criar conta de email: SílviaMonteiro8121351@gmail.com
+2025-01-05 14:52:53,906 - WARNING - Tentativa de criar email SílviaMonteiro8121351@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,912 - ERROR - Error ao criar conta de email: SílviaMonteiro8124006@gmail.com
+2025-01-05 14:52:53,912 - WARNING - Tentativa de criar email SílviaMonteiro8124006@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,921 - ERROR - Error ao criar conta de email: SílviaMonteiro8128524@gmail.com
+2025-01-05 14:52:53,922 - WARNING - Tentativa de criar email SílviaMonteiro8128524@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,929 - ERROR - Error ao criar conta de email: CláudiaOliveira8853385@gmail.com
+2025-01-05 14:52:53,929 - WARNING - Tentativa de criar email CláudiaOliveira8853385@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,939 - ERROR - Error ao criar conta de email: CláudiaOliveira8852427@gmail.com
+2025-01-05 14:52:53,939 - WARNING - Tentativa de criar email CláudiaOliveira8852427@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,952 - ERROR - Error ao criar conta de email: CláudiaOliveira8855104@gmail.com
+2025-01-05 14:52:53,953 - WARNING - Tentativa de criar email CláudiaOliveira8855104@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,959 - ERROR - Error ao criar conta de email: CláudiaOliveira8858180@gmail.com
+2025-01-05 14:52:53,960 - WARNING - Tentativa de criar email CláudiaOliveira8858180@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,970 - ERROR - Error ao criar conta de email: CláudiaOliveira8858112@gmail.com
+2025-01-05 14:52:53,971 - WARNING - Tentativa de criar email CláudiaOliveira8858112@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,978 - ERROR - Error ao criar conta de email: CamilaTeixeira3008438@gmail.com
+2025-01-05 14:52:53,978 - WARNING - Tentativa de criar email CamilaTeixeira3008438@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,987 - ERROR - Error ao criar conta de email: CamilaTeixeira3005581@gmail.com
+2025-01-05 14:52:53,987 - WARNING - Tentativa de criar email CamilaTeixeira3005581@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:53,993 - ERROR - Error ao criar conta de email: CamilaTeixeira3004788@gmail.com
+2025-01-05 14:52:53,993 - WARNING - Tentativa de criar email CamilaTeixeira3004788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,003 - ERROR - Error ao criar conta de email: CamilaTeixeira3005348@gmail.com
+2025-01-05 14:52:54,003 - WARNING - Tentativa de criar email CamilaTeixeira3005348@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,012 - ERROR - Error ao criar conta de email: CamilaTeixeira3007396@gmail.com
+2025-01-05 14:52:54,012 - WARNING - Tentativa de criar email CamilaTeixeira3007396@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,022 - ERROR - Error ao criar conta de email: KellyRibeiro2947493@gmail.com
+2025-01-05 14:52:54,023 - WARNING - Tentativa de criar email KellyRibeiro2947493@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,029 - ERROR - Error ao criar conta de email: KellyRibeiro2946415@gmail.com
+2025-01-05 14:52:54,029 - WARNING - Tentativa de criar email KellyRibeiro2946415@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,041 - ERROR - Error ao criar conta de email: KellyRibeiro2945767@gmail.com
+2025-01-05 14:52:54,042 - WARNING - Tentativa de criar email KellyRibeiro2945767@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,052 - ERROR - Error ao criar conta de email: KellyRibeiro2945812@gmail.com
+2025-01-05 14:52:54,053 - WARNING - Tentativa de criar email KellyRibeiro2945812@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,060 - ERROR - Error ao criar conta de email: KellyRibeiro2948980@gmail.com
+2025-01-05 14:52:54,060 - WARNING - Tentativa de criar email KellyRibeiro2948980@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,070 - ERROR - Error ao criar conta de email: DanieleSantiago5265670@gmail.com
+2025-01-05 14:52:54,071 - WARNING - Tentativa de criar email DanieleSantiago5265670@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,077 - ERROR - Error ao criar conta de email: DanieleSantiago5268461@gmail.com
+2025-01-05 14:52:54,077 - WARNING - Tentativa de criar email DanieleSantiago5268461@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,087 - ERROR - Error ao criar conta de email: DanieleSantiago5267883@gmail.com
+2025-01-05 14:52:54,088 - WARNING - Tentativa de criar email DanieleSantiago5267883@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,093 - ERROR - Error ao criar conta de email: DanieleSantiago5262639@gmail.com
+2025-01-05 14:52:54,094 - WARNING - Tentativa de criar email DanieleSantiago5262639@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,104 - ERROR - Error ao criar conta de email: DanieleSantiago5268168@gmail.com
+2025-01-05 14:52:54,104 - WARNING - Tentativa de criar email DanieleSantiago5268168@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,110 - ERROR - Error ao criar conta de email: SimoneAlmeida1054513@gmail.com
+2025-01-05 14:52:54,111 - WARNING - Tentativa de criar email SimoneAlmeida1054513@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,120 - ERROR - Error ao criar conta de email: SimoneAlmeida1056842@gmail.com
+2025-01-05 14:52:54,120 - WARNING - Tentativa de criar email SimoneAlmeida1056842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,128 - ERROR - Error ao criar conta de email: SimoneAlmeida1059519@gmail.com
+2025-01-05 14:52:54,128 - WARNING - Tentativa de criar email SimoneAlmeida1059519@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,137 - ERROR - Error ao criar conta de email: SimoneAlmeida1052109@gmail.com
+2025-01-05 14:52:54,138 - WARNING - Tentativa de criar email SimoneAlmeida1052109@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:52:54,146 - ERROR - Error ao criar conta de email: SimoneAlmeida1056702@gmail.com
+2025-01-05 14:52:54,146 - WARNING - Tentativa de criar email SimoneAlmeida1056702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:11,090 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:53:11,099 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:53:11,103 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:53:11,118 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:53:11,127 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:53:11,141 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:53:11,143 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:53:11,146 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:53:11,149 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:53:11,162 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:53:11,164 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:53:11,179 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:53:11,180 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:53:11,182 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:53:11,185 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:53:11,193 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:53:11,196 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:53:11,204 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:53:11,207 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:11,207 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:11,208 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:53:11,211 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:53:11,215 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:53:11,224 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:53:11,228 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:53:11,229 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:53:11,231 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:53:11,245 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:53:11,248 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:53:11,253 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:53:11,254 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:53:11,256 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:53:11,259 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:53:11,262 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:53:11,264 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:53:11,283 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:53:11,290 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:53:11,304 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:53:11,307 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:11,308 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:11,308 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:11,309 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:53:11,317 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:53:11,321 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:11,466 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:53:12,606 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/cambodia/any/google HTTP/1.1" 200 None
+2025-01-05 14:53:12,611 - DEBUG - Headers enviados: {'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ0Mzc3ODMsImlhdCI6MTczMjkwMTc4MywicmF5IjoiNjUwMzM0YTIwMTEyNTJmZjQ4Yzg3MWY1N2JlYTkwZGEiLCJzdWIiOjIyMDM2NjV9.yYDpzHJAIyb1WJqDDVqzVVAZUKfAeS7yYAwlPj57GlSYjEZqg-lf_VN6h5QUafW9Y2qVmcFNlihEUrQKBvVqdAdck6OZjKbrf-bwe0aa5h5KXEwcdKwkpmWipLHEgd1J_lByekBbOK5iIO-TjJWlB2RrgubaeEL9p2TbEhecUVAF5v-xApfRtNFQu1QT1uE_cUwlbbn-P-1n3I_OjZCWayJfJpI2ZZMLvbh_B788EYP_7RRoemPI3m3vuNQYMZkVio7dGb1-ZMNogmkV_DVvXb9uvO_N_Nt1x0bnIBv0UggDTnQy_kQ9097H8w41Rc-gxwRJ7pNkWu7rMVSFcdyUow', 'Accept': 'application/json'}
+2025-01-05 14:53:12,615 - DEBUG - Parametros enviados: {'country': 'cambodia', 'operator': 'any', 'product': 'google'}
+2025-01-05 14:53:12,617 - DEBUG - Resposta completa enviados: <Response [200]>
+2025-01-05 14:53:12,618 - INFO - Número de telefone e id adquirido: +855316757405 | 712049860
+2025-01-05 14:53:12,649 - DEBUG - Using proactor: IocpProactor
+2025-01-05 14:53:14,310 - INFO - Browser opened
+2025-01-05 14:53:20,155 - ERROR - Error ao criar conta de email: AlineAzevedo7669921@gmail.com
+2025-01-05 14:53:20,160 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,193 - ERROR - Error ao criar conta de email: AlineAzevedo7668080@gmail.com
+2025-01-05 14:53:20,223 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,234 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-05 14:53:20,236 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,247 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-05 14:53:20,250 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,261 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-05 14:53:20,262 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,273 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-05 14:53:20,273 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,286 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-05 14:53:20,286 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,294 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-05 14:53:20,294 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,304 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-05 14:53:20,304 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,311 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-05 14:53:20,312 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,320 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-05 14:53:20,321 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,328 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-05 14:53:20,328 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,337 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-05 14:53:20,337 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,344 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-05 14:53:20,345 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,353 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-05 14:53:20,354 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,361 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-05 14:53:20,361 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,369 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-05 14:53:20,370 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,377 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-05 14:53:20,377 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,385 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-05 14:53:20,385 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,392 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-05 14:53:20,393 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,402 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-05 14:53:20,403 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,410 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-05 14:53:20,410 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,418 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-05 14:53:20,418 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,425 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-05 14:53:20,426 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,434 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-05 14:53:20,435 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,441 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-05 14:53:20,442 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,450 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-05 14:53:20,451 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,457 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-05 14:53:20,458 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,462 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-05 14:53:20,464 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,472 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-05 14:53:20,473 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,479 - ERROR - Error ao criar conta de email: RoseliRochas3422028@gmail.com
+2025-01-05 14:53:20,481 - WARNING - Tentativa de criar email RoseliRochas3422028@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,501 - ERROR - Error ao criar conta de email: RoseliRochas3424455@gmail.com
+2025-01-05 14:53:20,502 - WARNING - Tentativa de criar email RoseliRochas3424455@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,508 - ERROR - Error ao criar conta de email: RoseliRochas3429504@gmail.com
+2025-01-05 14:53:20,509 - WARNING - Tentativa de criar email RoseliRochas3429504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,518 - ERROR - Error ao criar conta de email: RoseliRochas3424842@gmail.com
+2025-01-05 14:53:20,518 - WARNING - Tentativa de criar email RoseliRochas3424842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,525 - ERROR - Error ao criar conta de email: RoseliRochas3426570@gmail.com
+2025-01-05 14:53:20,526 - WARNING - Tentativa de criar email RoseliRochas3426570@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,538 - ERROR - Error ao criar conta de email: DanieleSimões6409771@gmail.com
+2025-01-05 14:53:20,538 - WARNING - Tentativa de criar email DanieleSimões6409771@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,545 - ERROR - Error ao criar conta de email: DanieleSimões6409394@gmail.com
+2025-01-05 14:53:20,545 - WARNING - Tentativa de criar email DanieleSimões6409394@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,558 - ERROR - Error ao criar conta de email: DanieleSimões6409829@gmail.com
+2025-01-05 14:53:20,558 - WARNING - Tentativa de criar email DanieleSimões6409829@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,568 - ERROR - Error ao criar conta de email: DanieleSimões6403040@gmail.com
+2025-01-05 14:53:20,569 - WARNING - Tentativa de criar email DanieleSimões6403040@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,577 - ERROR - Error ao criar conta de email: DanieleSimões6406066@gmail.com
+2025-01-05 14:53:20,577 - WARNING - Tentativa de criar email DanieleSimões6406066@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,586 - ERROR - Error ao criar conta de email: VerônicaMota7445902@gmail.com
+2025-01-05 14:53:20,587 - WARNING - Tentativa de criar email VerônicaMota7445902@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,593 - ERROR - Error ao criar conta de email: VerônicaMota7446329@gmail.com
+2025-01-05 14:53:20,594 - WARNING - Tentativa de criar email VerônicaMota7446329@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,602 - ERROR - Error ao criar conta de email: VerônicaMota7443509@gmail.com
+2025-01-05 14:53:20,603 - WARNING - Tentativa de criar email VerônicaMota7443509@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,610 - ERROR - Error ao criar conta de email: VerônicaMota7448788@gmail.com
+2025-01-05 14:53:20,611 - WARNING - Tentativa de criar email VerônicaMota7448788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,619 - ERROR - Error ao criar conta de email: VerônicaMota7443027@gmail.com
+2025-01-05 14:53:20,620 - WARNING - Tentativa de criar email VerônicaMota7443027@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,626 - ERROR - Error ao criar conta de email: MartaMartins1648913@gmail.com
+2025-01-05 14:53:20,627 - WARNING - Tentativa de criar email MartaMartins1648913@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,635 - ERROR - Error ao criar conta de email: MartaMartins1646175@gmail.com
+2025-01-05 14:53:20,636 - WARNING - Tentativa de criar email MartaMartins1646175@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,644 - ERROR - Error ao criar conta de email: MartaMartins1649206@gmail.com
+2025-01-05 14:53:20,645 - WARNING - Tentativa de criar email MartaMartins1649206@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,657 - ERROR - Error ao criar conta de email: MartaMartins1644516@gmail.com
+2025-01-05 14:53:20,657 - WARNING - Tentativa de criar email MartaMartins1644516@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,670 - ERROR - Error ao criar conta de email: MartaMartins1642400@gmail.com
+2025-01-05 14:53:20,671 - WARNING - Tentativa de criar email MartaMartins1642400@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,678 - ERROR - Error ao criar conta de email: JuliaBrito7872768@gmail.com
+2025-01-05 14:53:20,678 - WARNING - Tentativa de criar email JuliaBrito7872768@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,690 - ERROR - Error ao criar conta de email: JuliaBrito7879013@gmail.com
+2025-01-05 14:53:20,690 - WARNING - Tentativa de criar email JuliaBrito7879013@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,704 - ERROR - Error ao criar conta de email: JuliaBrito7876778@gmail.com
+2025-01-05 14:53:20,704 - WARNING - Tentativa de criar email JuliaBrito7876778@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,713 - ERROR - Error ao criar conta de email: JuliaBrito7879258@gmail.com
+2025-01-05 14:53:20,715 - WARNING - Tentativa de criar email JuliaBrito7879258@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,723 - ERROR - Error ao criar conta de email: ElaineTeixeira4002929@gmail.com
+2025-01-05 14:53:20,724 - WARNING - Tentativa de criar email ElaineTeixeira4002929@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,738 - ERROR - Error ao criar conta de email: ElaineTeixeira4001763@gmail.com
+2025-01-05 14:53:20,738 - WARNING - Tentativa de criar email ElaineTeixeira4001763@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,752 - ERROR - Error ao criar conta de email: ElaineTeixeira4007151@gmail.com
+2025-01-05 14:53:20,753 - WARNING - Tentativa de criar email ElaineTeixeira4007151@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,759 - ERROR - Error ao criar conta de email: ElaineTeixeira4009326@gmail.com
+2025-01-05 14:53:20,759 - WARNING - Tentativa de criar email ElaineTeixeira4009326@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,777 - ERROR - Error ao criar conta de email: ElaineTeixeira4004698@gmail.com
+2025-01-05 14:53:20,777 - WARNING - Tentativa de criar email ElaineTeixeira4004698@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,793 - ERROR - Error ao criar conta de email: JulianaFagundes1022404@gmail.com
+2025-01-05 14:53:20,794 - WARNING - Tentativa de criar email JulianaFagundes1022404@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,809 - ERROR - Error ao criar conta de email: JulianaFagundes1025752@gmail.com
+2025-01-05 14:53:20,809 - WARNING - Tentativa de criar email JulianaFagundes1025752@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,820 - ERROR - Error ao criar conta de email: JulianaFagundes1021991@gmail.com
+2025-01-05 14:53:20,821 - WARNING - Tentativa de criar email JulianaFagundes1021991@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,830 - ERROR - Error ao criar conta de email: JulianaFagundes1021512@gmail.com
+2025-01-05 14:53:20,832 - WARNING - Tentativa de criar email JulianaFagundes1021512@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,838 - ERROR - Error ao criar conta de email: JulianaFagundes1028788@gmail.com
+2025-01-05 14:53:20,839 - WARNING - Tentativa de criar email JulianaFagundes1028788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,846 - ERROR - Error ao criar conta de email: SílviaMonteiro8125149@gmail.com
+2025-01-05 14:53:20,848 - WARNING - Tentativa de criar email SílviaMonteiro8125149@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,856 - ERROR - Error ao criar conta de email: SílviaMonteiro8121186@gmail.com
+2025-01-05 14:53:20,857 - WARNING - Tentativa de criar email SílviaMonteiro8121186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,868 - ERROR - Error ao criar conta de email: SílviaMonteiro8121351@gmail.com
+2025-01-05 14:53:20,868 - WARNING - Tentativa de criar email SílviaMonteiro8121351@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,875 - ERROR - Error ao criar conta de email: SílviaMonteiro8124006@gmail.com
+2025-01-05 14:53:20,875 - WARNING - Tentativa de criar email SílviaMonteiro8124006@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,884 - ERROR - Error ao criar conta de email: SílviaMonteiro8128524@gmail.com
+2025-01-05 14:53:20,884 - WARNING - Tentativa de criar email SílviaMonteiro8128524@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,890 - ERROR - Error ao criar conta de email: CláudiaOliveira8853385@gmail.com
+2025-01-05 14:53:20,891 - WARNING - Tentativa de criar email CláudiaOliveira8853385@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,896 - ERROR - Error ao criar conta de email: CláudiaOliveira8852427@gmail.com
+2025-01-05 14:53:20,898 - WARNING - Tentativa de criar email CláudiaOliveira8852427@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,904 - ERROR - Error ao criar conta de email: CláudiaOliveira8855104@gmail.com
+2025-01-05 14:53:20,904 - WARNING - Tentativa de criar email CláudiaOliveira8855104@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,910 - ERROR - Error ao criar conta de email: CláudiaOliveira8858180@gmail.com
+2025-01-05 14:53:20,911 - WARNING - Tentativa de criar email CláudiaOliveira8858180@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,919 - ERROR - Error ao criar conta de email: CláudiaOliveira8858112@gmail.com
+2025-01-05 14:53:20,920 - WARNING - Tentativa de criar email CláudiaOliveira8858112@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,924 - ERROR - Error ao criar conta de email: CamilaTeixeira3008438@gmail.com
+2025-01-05 14:53:20,925 - WARNING - Tentativa de criar email CamilaTeixeira3008438@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,932 - ERROR - Error ao criar conta de email: CamilaTeixeira3005581@gmail.com
+2025-01-05 14:53:20,932 - WARNING - Tentativa de criar email CamilaTeixeira3005581@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,937 - ERROR - Error ao criar conta de email: CamilaTeixeira3004788@gmail.com
+2025-01-05 14:53:20,937 - WARNING - Tentativa de criar email CamilaTeixeira3004788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,943 - ERROR - Error ao criar conta de email: CamilaTeixeira3005348@gmail.com
+2025-01-05 14:53:20,943 - WARNING - Tentativa de criar email CamilaTeixeira3005348@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,950 - ERROR - Error ao criar conta de email: CamilaTeixeira3007396@gmail.com
+2025-01-05 14:53:20,951 - WARNING - Tentativa de criar email CamilaTeixeira3007396@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,956 - ERROR - Error ao criar conta de email: KellyRibeiro2947493@gmail.com
+2025-01-05 14:53:20,956 - WARNING - Tentativa de criar email KellyRibeiro2947493@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,961 - ERROR - Error ao criar conta de email: KellyRibeiro2946415@gmail.com
+2025-01-05 14:53:20,962 - WARNING - Tentativa de criar email KellyRibeiro2946415@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,970 - ERROR - Error ao criar conta de email: KellyRibeiro2945767@gmail.com
+2025-01-05 14:53:20,970 - WARNING - Tentativa de criar email KellyRibeiro2945767@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,975 - ERROR - Error ao criar conta de email: KellyRibeiro2945812@gmail.com
+2025-01-05 14:53:20,976 - WARNING - Tentativa de criar email KellyRibeiro2945812@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,983 - ERROR - Error ao criar conta de email: KellyRibeiro2948980@gmail.com
+2025-01-05 14:53:20,984 - WARNING - Tentativa de criar email KellyRibeiro2948980@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,990 - ERROR - Error ao criar conta de email: DanieleSantiago5265670@gmail.com
+2025-01-05 14:53:20,990 - WARNING - Tentativa de criar email DanieleSantiago5265670@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:20,998 - ERROR - Error ao criar conta de email: DanieleSantiago5268461@gmail.com
+2025-01-05 14:53:20,999 - WARNING - Tentativa de criar email DanieleSantiago5268461@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,005 - ERROR - Error ao criar conta de email: DanieleSantiago5267883@gmail.com
+2025-01-05 14:53:21,006 - WARNING - Tentativa de criar email DanieleSantiago5267883@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,011 - ERROR - Error ao criar conta de email: DanieleSantiago5262639@gmail.com
+2025-01-05 14:53:21,011 - WARNING - Tentativa de criar email DanieleSantiago5262639@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,020 - ERROR - Error ao criar conta de email: DanieleSantiago5268168@gmail.com
+2025-01-05 14:53:21,021 - WARNING - Tentativa de criar email DanieleSantiago5268168@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,025 - ERROR - Error ao criar conta de email: SimoneAlmeida1054513@gmail.com
+2025-01-05 14:53:21,026 - WARNING - Tentativa de criar email SimoneAlmeida1054513@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,032 - ERROR - Error ao criar conta de email: SimoneAlmeida1056842@gmail.com
+2025-01-05 14:53:21,033 - WARNING - Tentativa de criar email SimoneAlmeida1056842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,038 - ERROR - Error ao criar conta de email: SimoneAlmeida1059519@gmail.com
+2025-01-05 14:53:21,038 - WARNING - Tentativa de criar email SimoneAlmeida1059519@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,042 - ERROR - Error ao criar conta de email: SimoneAlmeida1052109@gmail.com
+2025-01-05 14:53:21,043 - WARNING - Tentativa de criar email SimoneAlmeida1052109@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:21,050 - ERROR - Error ao criar conta de email: SimoneAlmeida1056702@gmail.com
+2025-01-05 14:53:21,051 - WARNING - Tentativa de criar email SimoneAlmeida1056702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:53:37,237 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:53:37,250 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:53:37,256 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:53:37,264 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:53:37,266 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:53:37,275 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:53:37,277 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:53:37,279 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:53:37,281 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:53:37,288 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:53:37,290 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:53:37,299 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:53:37,301 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:53:37,304 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:53:37,307 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:53:37,314 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:53:37,317 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:53:37,331 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:53:37,334 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:37,336 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:37,337 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:53:37,340 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:53:37,342 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:53:37,352 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:53:37,356 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:53:37,357 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:53:37,361 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:53:37,368 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:53:37,372 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:53:37,379 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:53:37,380 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:53:37,382 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:53:37,384 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:53:37,387 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:53:37,389 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:53:37,404 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:53:37,410 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:53:37,423 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:53:37,425 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:37,426 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:37,428 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:37,429 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:53:37,440 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:53:37,445 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:53:37,612 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:53:49,951 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/philippines/any/google HTTP/1.1" 200 None
+2025-01-05 14:53:49,957 - DEBUG - Headers enviados: {'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ0Mzc3ODMsImlhdCI6MTczMjkwMTc4MywicmF5IjoiNjUwMzM0YTIwMTEyNTJmZjQ4Yzg3MWY1N2JlYTkwZGEiLCJzdWIiOjIyMDM2NjV9.yYDpzHJAIyb1WJqDDVqzVVAZUKfAeS7yYAwlPj57GlSYjEZqg-lf_VN6h5QUafW9Y2qVmcFNlihEUrQKBvVqdAdck6OZjKbrf-bwe0aa5h5KXEwcdKwkpmWipLHEgd1J_lByekBbOK5iIO-TjJWlB2RrgubaeEL9p2TbEhecUVAF5v-xApfRtNFQu1QT1uE_cUwlbbn-P-1n3I_OjZCWayJfJpI2ZZMLvbh_B788EYP_7RRoemPI3m3vuNQYMZkVio7dGb1-ZMNogmkV_DVvXb9uvO_N_Nt1x0bnIBv0UggDTnQy_kQ9097H8w41Rc-gxwRJ7pNkWu7rMVSFcdyUow', 'Accept': 'application/json'}
+2025-01-05 14:53:49,961 - DEBUG - Parametros enviados: {'country': 'philippines', 'operator': 'any', 'product': 'google'}
+2025-01-05 14:53:49,963 - DEBUG - Resposta completa enviados: <Response [200]>
+2025-01-05 14:53:49,964 - INFO - Número de telefone e id adquirido: +639684327452 | 712050181
+2025-01-05 14:53:49,991 - DEBUG - Using proactor: IocpProactor
+2025-01-05 14:53:51,793 - INFO - Browser opened
+2025-01-05 14:53:57,679 - INFO - Filled: Renata Fagundes
+2025-01-05 14:54:03,124 - INFO - Input gmail filled
+2025-01-05 14:54:04,515 - INFO - Password filled
+2025-01-05 14:54:14,837 - INFO - Phone number filled: +639684327452
+2025-01-05 14:54:19,239 - ERROR - Error to fill code number: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input#code") to be visible
+
+2025-01-05 14:54:19,252 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,299 - ERROR - Error ao criar conta de email: AlineAzevedo7668080@gmail.com
+2025-01-05 14:54:19,343 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,359 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-05 14:54:19,359 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,379 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-05 14:54:19,379 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,386 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-05 14:54:19,386 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,394 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-05 14:54:19,395 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,402 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-05 14:54:19,403 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,412 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-05 14:54:19,412 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,418 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-05 14:54:19,418 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,422 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-05 14:54:19,423 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,439 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-05 14:54:19,439 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,448 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-05 14:54:19,449 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,454 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-05 14:54:19,454 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,462 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-05 14:54:19,462 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,468 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-05 14:54:19,469 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,473 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-05 14:54:19,474 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,482 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-05 14:54:19,483 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,487 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-05 14:54:19,488 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,494 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-05 14:54:19,495 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,501 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-05 14:54:19,501 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,506 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-05 14:54:19,506 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,515 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-05 14:54:19,515 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,520 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-05 14:54:19,520 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,529 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-05 14:54:19,530 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,535 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-05 14:54:19,535 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,544 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-05 14:54:19,545 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,550 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-05 14:54:19,550 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,555 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-05 14:54:19,556 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,562 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-05 14:54:19,563 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,568 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-05 14:54:19,568 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,575 - ERROR - Error ao criar conta de email: RoseliRochas3422028@gmail.com
+2025-01-05 14:54:19,576 - WARNING - Tentativa de criar email RoseliRochas3422028@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,581 - ERROR - Error ao criar conta de email: RoseliRochas3424455@gmail.com
+2025-01-05 14:54:19,582 - WARNING - Tentativa de criar email RoseliRochas3424455@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,586 - ERROR - Error ao criar conta de email: RoseliRochas3429504@gmail.com
+2025-01-05 14:54:19,587 - WARNING - Tentativa de criar email RoseliRochas3429504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,592 - ERROR - Error ao criar conta de email: RoseliRochas3424842@gmail.com
+2025-01-05 14:54:19,593 - WARNING - Tentativa de criar email RoseliRochas3424842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,600 - ERROR - Error ao criar conta de email: RoseliRochas3426570@gmail.com
+2025-01-05 14:54:19,600 - WARNING - Tentativa de criar email RoseliRochas3426570@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,604 - ERROR - Error ao criar conta de email: DanieleSimões6409771@gmail.com
+2025-01-05 14:54:19,605 - WARNING - Tentativa de criar email DanieleSimões6409771@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,611 - ERROR - Error ao criar conta de email: DanieleSimões6409394@gmail.com
+2025-01-05 14:54:19,612 - WARNING - Tentativa de criar email DanieleSimões6409394@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,617 - ERROR - Error ao criar conta de email: DanieleSimões6409829@gmail.com
+2025-01-05 14:54:19,618 - WARNING - Tentativa de criar email DanieleSimões6409829@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,622 - ERROR - Error ao criar conta de email: DanieleSimões6403040@gmail.com
+2025-01-05 14:54:19,623 - WARNING - Tentativa de criar email DanieleSimões6403040@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,630 - ERROR - Error ao criar conta de email: DanieleSimões6406066@gmail.com
+2025-01-05 14:54:19,631 - WARNING - Tentativa de criar email DanieleSimões6406066@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,636 - ERROR - Error ao criar conta de email: VerônicaMota7445902@gmail.com
+2025-01-05 14:54:19,636 - WARNING - Tentativa de criar email VerônicaMota7445902@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,641 - ERROR - Error ao criar conta de email: VerônicaMota7446329@gmail.com
+2025-01-05 14:54:19,642 - WARNING - Tentativa de criar email VerônicaMota7446329@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,648 - ERROR - Error ao criar conta de email: VerônicaMota7443509@gmail.com
+2025-01-05 14:54:19,649 - WARNING - Tentativa de criar email VerônicaMota7443509@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,653 - ERROR - Error ao criar conta de email: VerônicaMota7448788@gmail.com
+2025-01-05 14:54:19,654 - WARNING - Tentativa de criar email VerônicaMota7448788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,661 - ERROR - Error ao criar conta de email: VerônicaMota7443027@gmail.com
+2025-01-05 14:54:19,662 - WARNING - Tentativa de criar email VerônicaMota7443027@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,667 - ERROR - Error ao criar conta de email: MartaMartins1648913@gmail.com
+2025-01-05 14:54:19,668 - WARNING - Tentativa de criar email MartaMartins1648913@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,672 - ERROR - Error ao criar conta de email: MartaMartins1646175@gmail.com
+2025-01-05 14:54:19,673 - WARNING - Tentativa de criar email MartaMartins1646175@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,683 - ERROR - Error ao criar conta de email: MartaMartins1649206@gmail.com
+2025-01-05 14:54:19,683 - WARNING - Tentativa de criar email MartaMartins1649206@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,688 - ERROR - Error ao criar conta de email: MartaMartins1644516@gmail.com
+2025-01-05 14:54:19,688 - WARNING - Tentativa de criar email MartaMartins1644516@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,696 - ERROR - Error ao criar conta de email: MartaMartins1642400@gmail.com
+2025-01-05 14:54:19,696 - WARNING - Tentativa de criar email MartaMartins1642400@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,701 - ERROR - Error ao criar conta de email: JuliaBrito7872768@gmail.com
+2025-01-05 14:54:19,702 - WARNING - Tentativa de criar email JuliaBrito7872768@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,707 - ERROR - Error ao criar conta de email: JuliaBrito7879013@gmail.com
+2025-01-05 14:54:19,707 - WARNING - Tentativa de criar email JuliaBrito7879013@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,713 - ERROR - Error ao criar conta de email: JuliaBrito7876778@gmail.com
+2025-01-05 14:54:19,714 - WARNING - Tentativa de criar email JuliaBrito7876778@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,718 - ERROR - Error ao criar conta de email: JuliaBrito7879258@gmail.com
+2025-01-05 14:54:19,719 - WARNING - Tentativa de criar email JuliaBrito7879258@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,723 - ERROR - Error ao criar conta de email: ElaineTeixeira4002929@gmail.com
+2025-01-05 14:54:19,724 - WARNING - Tentativa de criar email ElaineTeixeira4002929@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,731 - ERROR - Error ao criar conta de email: ElaineTeixeira4001763@gmail.com
+2025-01-05 14:54:19,732 - WARNING - Tentativa de criar email ElaineTeixeira4001763@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,736 - ERROR - Error ao criar conta de email: ElaineTeixeira4007151@gmail.com
+2025-01-05 14:54:19,737 - WARNING - Tentativa de criar email ElaineTeixeira4007151@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,743 - ERROR - Error ao criar conta de email: ElaineTeixeira4009326@gmail.com
+2025-01-05 14:54:19,744 - WARNING - Tentativa de criar email ElaineTeixeira4009326@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,748 - ERROR - Error ao criar conta de email: ElaineTeixeira4004698@gmail.com
+2025-01-05 14:54:19,749 - WARNING - Tentativa de criar email ElaineTeixeira4004698@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,753 - ERROR - Error ao criar conta de email: JulianaFagundes1022404@gmail.com
+2025-01-05 14:54:19,753 - WARNING - Tentativa de criar email JulianaFagundes1022404@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,760 - ERROR - Error ao criar conta de email: JulianaFagundes1025752@gmail.com
+2025-01-05 14:54:19,761 - WARNING - Tentativa de criar email JulianaFagundes1025752@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,766 - ERROR - Error ao criar conta de email: JulianaFagundes1021991@gmail.com
+2025-01-05 14:54:19,767 - WARNING - Tentativa de criar email JulianaFagundes1021991@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,775 - ERROR - Error ao criar conta de email: JulianaFagundes1021512@gmail.com
+2025-01-05 14:54:19,776 - WARNING - Tentativa de criar email JulianaFagundes1021512@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,783 - ERROR - Error ao criar conta de email: JulianaFagundes1028788@gmail.com
+2025-01-05 14:54:19,783 - WARNING - Tentativa de criar email JulianaFagundes1028788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,789 - ERROR - Error ao criar conta de email: SílviaMonteiro8125149@gmail.com
+2025-01-05 14:54:19,790 - WARNING - Tentativa de criar email SílviaMonteiro8125149@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,798 - ERROR - Error ao criar conta de email: SílviaMonteiro8121186@gmail.com
+2025-01-05 14:54:19,798 - WARNING - Tentativa de criar email SílviaMonteiro8121186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,804 - ERROR - Error ao criar conta de email: SílviaMonteiro8121351@gmail.com
+2025-01-05 14:54:19,805 - WARNING - Tentativa de criar email SílviaMonteiro8121351@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,813 - ERROR - Error ao criar conta de email: SílviaMonteiro8124006@gmail.com
+2025-01-05 14:54:19,814 - WARNING - Tentativa de criar email SílviaMonteiro8124006@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,819 - ERROR - Error ao criar conta de email: SílviaMonteiro8128524@gmail.com
+2025-01-05 14:54:19,819 - WARNING - Tentativa de criar email SílviaMonteiro8128524@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,827 - ERROR - Error ao criar conta de email: CláudiaOliveira8853385@gmail.com
+2025-01-05 14:54:19,828 - WARNING - Tentativa de criar email CláudiaOliveira8853385@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,833 - ERROR - Error ao criar conta de email: CláudiaOliveira8852427@gmail.com
+2025-01-05 14:54:19,834 - WARNING - Tentativa de criar email CláudiaOliveira8852427@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,839 - ERROR - Error ao criar conta de email: CláudiaOliveira8855104@gmail.com
+2025-01-05 14:54:19,840 - WARNING - Tentativa de criar email CláudiaOliveira8855104@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,849 - ERROR - Error ao criar conta de email: CláudiaOliveira8858180@gmail.com
+2025-01-05 14:54:19,850 - WARNING - Tentativa de criar email CláudiaOliveira8858180@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,855 - ERROR - Error ao criar conta de email: CláudiaOliveira8858112@gmail.com
+2025-01-05 14:54:19,855 - WARNING - Tentativa de criar email CláudiaOliveira8858112@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,864 - ERROR - Error ao criar conta de email: CamilaTeixeira3008438@gmail.com
+2025-01-05 14:54:19,864 - WARNING - Tentativa de criar email CamilaTeixeira3008438@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,869 - ERROR - Error ao criar conta de email: CamilaTeixeira3005581@gmail.com
+2025-01-05 14:54:19,870 - WARNING - Tentativa de criar email CamilaTeixeira3005581@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,878 - ERROR - Error ao criar conta de email: CamilaTeixeira3004788@gmail.com
+2025-01-05 14:54:19,879 - WARNING - Tentativa de criar email CamilaTeixeira3004788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,885 - ERROR - Error ao criar conta de email: CamilaTeixeira3005348@gmail.com
+2025-01-05 14:54:19,885 - WARNING - Tentativa de criar email CamilaTeixeira3005348@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,893 - ERROR - Error ao criar conta de email: CamilaTeixeira3007396@gmail.com
+2025-01-05 14:54:19,894 - WARNING - Tentativa de criar email CamilaTeixeira3007396@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,900 - ERROR - Error ao criar conta de email: KellyRibeiro2947493@gmail.com
+2025-01-05 14:54:19,901 - WARNING - Tentativa de criar email KellyRibeiro2947493@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,906 - ERROR - Error ao criar conta de email: KellyRibeiro2946415@gmail.com
+2025-01-05 14:54:19,907 - WARNING - Tentativa de criar email KellyRibeiro2946415@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,914 - ERROR - Error ao criar conta de email: KellyRibeiro2945767@gmail.com
+2025-01-05 14:54:19,915 - WARNING - Tentativa de criar email KellyRibeiro2945767@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,920 - ERROR - Error ao criar conta de email: KellyRibeiro2945812@gmail.com
+2025-01-05 14:54:19,920 - WARNING - Tentativa de criar email KellyRibeiro2945812@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,929 - ERROR - Error ao criar conta de email: KellyRibeiro2948980@gmail.com
+2025-01-05 14:54:19,930 - WARNING - Tentativa de criar email KellyRibeiro2948980@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,935 - ERROR - Error ao criar conta de email: DanieleSantiago5265670@gmail.com
+2025-01-05 14:54:19,936 - WARNING - Tentativa de criar email DanieleSantiago5265670@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,942 - ERROR - Error ao criar conta de email: DanieleSantiago5268461@gmail.com
+2025-01-05 14:54:19,944 - WARNING - Tentativa de criar email DanieleSantiago5268461@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,950 - ERROR - Error ao criar conta de email: DanieleSantiago5267883@gmail.com
+2025-01-05 14:54:19,950 - WARNING - Tentativa de criar email DanieleSantiago5267883@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,956 - ERROR - Error ao criar conta de email: DanieleSantiago5262639@gmail.com
+2025-01-05 14:54:19,957 - WARNING - Tentativa de criar email DanieleSantiago5262639@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,964 - ERROR - Error ao criar conta de email: DanieleSantiago5268168@gmail.com
+2025-01-05 14:54:19,965 - WARNING - Tentativa de criar email DanieleSantiago5268168@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,969 - ERROR - Error ao criar conta de email: SimoneAlmeida1054513@gmail.com
+2025-01-05 14:54:19,969 - WARNING - Tentativa de criar email SimoneAlmeida1054513@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,976 - ERROR - Error ao criar conta de email: SimoneAlmeida1056842@gmail.com
+2025-01-05 14:54:19,977 - WARNING - Tentativa de criar email SimoneAlmeida1056842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,984 - ERROR - Error ao criar conta de email: SimoneAlmeida1059519@gmail.com
+2025-01-05 14:54:19,985 - WARNING - Tentativa de criar email SimoneAlmeida1059519@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,989 - ERROR - Error ao criar conta de email: SimoneAlmeida1052109@gmail.com
+2025-01-05 14:54:19,990 - WARNING - Tentativa de criar email SimoneAlmeida1052109@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:19,997 - ERROR - Error ao criar conta de email: SimoneAlmeida1056702@gmail.com
+2025-01-05 14:54:19,998 - WARNING - Tentativa de criar email SimoneAlmeida1056702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:54:34,549 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:54:34,558 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:54:34,561 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:54:34,568 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:54:34,570 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:54:34,577 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:54:34,584 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:54:34,587 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:54:34,591 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:54:34,598 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:54:34,601 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:54:34,619 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:54:34,626 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:54:34,628 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:54:34,634 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:54:34,646 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:54:34,650 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:54:34,660 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:54:34,663 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:54:34,664 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:54:34,665 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:54:34,668 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:54:34,674 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:54:34,684 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:54:34,687 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:54:34,692 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:54:34,694 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:54:34,703 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:54:34,707 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:54:34,712 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:54:34,713 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:54:34,715 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:54:34,718 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:54:34,719 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:54:34,723 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:54:34,738 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:54:34,742 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:54:34,756 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:54:34,758 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:54:34,759 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:54:34,759 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:54:34,760 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:54:34,772 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:54:34,774 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:54:34,938 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:54:36,085 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/cambodia/any/google HTTP/1.1" 200 None
+2025-01-05 14:54:36,092 - DEBUG - Headers enviados: {'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ0Mzc3ODMsImlhdCI6MTczMjkwMTc4MywicmF5IjoiNjUwMzM0YTIwMTEyNTJmZjQ4Yzg3MWY1N2JlYTkwZGEiLCJzdWIiOjIyMDM2NjV9.yYDpzHJAIyb1WJqDDVqzVVAZUKfAeS7yYAwlPj57GlSYjEZqg-lf_VN6h5QUafW9Y2qVmcFNlihEUrQKBvVqdAdck6OZjKbrf-bwe0aa5h5KXEwcdKwkpmWipLHEgd1J_lByekBbOK5iIO-TjJWlB2RrgubaeEL9p2TbEhecUVAF5v-xApfRtNFQu1QT1uE_cUwlbbn-P-1n3I_OjZCWayJfJpI2ZZMLvbh_B788EYP_7RRoemPI3m3vuNQYMZkVio7dGb1-ZMNogmkV_DVvXb9uvO_N_Nt1x0bnIBv0UggDTnQy_kQ9097H8w41Rc-gxwRJ7pNkWu7rMVSFcdyUow', 'Accept': 'application/json'}
+2025-01-05 14:54:36,096 - DEBUG - Parametros enviados: {'country': 'cambodia', 'operator': 'any', 'product': 'google'}
+2025-01-05 14:54:36,098 - DEBUG - Resposta completa enviados: <Response [200]>
+2025-01-05 14:54:36,100 - INFO - Número de telefone e id adquirido: +855317271535 | 712050543
+2025-01-05 14:54:36,125 - DEBUG - Using proactor: IocpProactor
+2025-01-05 14:54:37,873 - INFO - Browser opened
+2025-01-05 14:54:44,023 - INFO - Filled: Cláudia Rodrigues
+2025-01-05 14:54:49,898 - INFO - Input gmail filled
+2025-01-05 14:54:51,971 - INFO - Password filled
+2025-01-05 14:55:07,193 - ERROR - Timeout encountered: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input#phoneNumberId") to be visible
+
+2025-01-05 14:55:07,197 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:55:09,107 - INFO - Filled: Andreia Viana
+2025-01-05 14:55:11,318 - INFO - Input gmail filled
+2025-01-05 14:55:12,375 - INFO - Password filled
+2025-01-05 14:55:27,615 - ERROR - Timeout encountered: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input#phoneNumberId") to be visible
+
+2025-01-05 14:55:27,617 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:55:29,505 - INFO - Filled: Kátia Morais
+2025-01-05 14:55:32,790 - INFO - Input gmail filled
+2025-01-05 14:55:34,041 - INFO - Password filled
+2025-01-05 14:55:44,347 - INFO - Phone number filled: +855317271535
+2025-01-05 14:55:49,518 - ERROR - Error to fill code number: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input#code") to be visible
+
+2025-01-05 14:55:49,522 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:55:51,400 - INFO - Filled: Carla Vieira
+2025-01-05 14:58:19,003 - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-05 14:58:19,013 - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-05 14:58:19,016 - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-05 14:58:19,023 - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-05 14:58:19,026 - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-05 14:58:19,039 - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-05 14:58:19,041 - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-05 14:58:19,043 - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-05 14:58:19,047 - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-05 14:58:19,063 - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-05 14:58:19,068 - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-05 14:58:19,085 - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-05 14:58:19,092 - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-05 14:58:19,095 - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-05 14:58:19,097 - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-05 14:58:19,105 - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-05 14:58:19,108 - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-05 14:58:19,117 - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-05 14:58:19,119 - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:58:19,120 - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:58:19,121 - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-05 14:58:19,124 - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-05 14:58:19,131 - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-05 14:58:19,143 - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-05 14:58:19,146 - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-05 14:58:19,147 - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-05 14:58:19,148 - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-05 14:58:19,158 - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-05 14:58:19,160 - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-05 14:58:19,165 - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-05 14:58:19,167 - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-05 14:58:19,169 - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-05 14:58:19,171 - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-05 14:58:19,175 - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-05 14:58:19,177 - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-05 14:58:19,193 - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-05 14:58:19,197 - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-05 14:58:19,211 - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-05 14:58:19,214 - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:58:19,215 - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:58:19,215 - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:58:19,216 - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-05 14:58:19,227 - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-05 14:58:19,229 - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-05 14:58:19,391 - DEBUG - Starting new HTTPS connection (1): 5sim.net:443
+2025-01-05 14:58:36,101 - DEBUG - https://5sim.net:443 "GET /v1/user/buy/activation/philippines/any/google HTTP/1.1" 200 None
+2025-01-05 14:58:36,106 - DEBUG - Headers enviados: {'Authorization': 'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ0Mzc3ODMsImlhdCI6MTczMjkwMTc4MywicmF5IjoiNjUwMzM0YTIwMTEyNTJmZjQ4Yzg3MWY1N2JlYTkwZGEiLCJzdWIiOjIyMDM2NjV9.yYDpzHJAIyb1WJqDDVqzVVAZUKfAeS7yYAwlPj57GlSYjEZqg-lf_VN6h5QUafW9Y2qVmcFNlihEUrQKBvVqdAdck6OZjKbrf-bwe0aa5h5KXEwcdKwkpmWipLHEgd1J_lByekBbOK5iIO-TjJWlB2RrgubaeEL9p2TbEhecUVAF5v-xApfRtNFQu1QT1uE_cUwlbbn-P-1n3I_OjZCWayJfJpI2ZZMLvbh_B788EYP_7RRoemPI3m3vuNQYMZkVio7dGb1-ZMNogmkV_DVvXb9uvO_N_Nt1x0bnIBv0UggDTnQy_kQ9097H8w41Rc-gxwRJ7pNkWu7rMVSFcdyUow', 'Accept': 'application/json'}
+2025-01-05 14:58:36,110 - DEBUG - Parametros enviados: {'country': 'philippines', 'operator': 'any', 'product': 'google'}
+2025-01-05 14:58:36,112 - DEBUG - Resposta completa enviados: <Response [200]>
+2025-01-05 14:58:36,113 - INFO - Número de telefone e id adquirido: +639626744157 | 712052344
+2025-01-05 14:58:36,149 - DEBUG - Using proactor: IocpProactor
+2025-01-05 14:58:37,951 - INFO - Browser opened
+2025-01-05 14:58:41,917 - INFO - Filled: Cláudia Ribeiro
+2025-01-05 14:58:47,647 - INFO - Input gmail filled
+2025-01-05 14:58:49,479 - INFO - Password filled
+2025-01-05 14:59:04,738 - ERROR - Timeout encountered: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input#phoneNumberId") to be visible
+
+2025-01-05 14:59:04,742 - WARNING - Tentativa de criar email AlineAzevedo7669921@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:06,808 - INFO - Filled: Patricia Vieira
+2025-01-05 14:59:09,179 - INFO - Input gmail filled
+2025-01-05 14:59:10,509 - INFO - Password filled
+2025-01-05 14:59:23,336 - INFO - Phone number filled: +639626744157
+2025-01-05 14:59:28,465 - ERROR - Error to fill code number: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input#code") to be visible
+
+2025-01-05 14:59:28,466 - WARNING - Tentativa de criar email AlineAzevedo7668080@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,566 - ERROR - Error ao criar conta de email: AlineAzevedo7665720@gmail.com
+2025-01-05 14:59:28,568 - WARNING - Tentativa de criar email AlineAzevedo7665720@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,599 - ERROR - Error ao criar conta de email: AlineAzevedo7669279@gmail.com
+2025-01-05 14:59:28,601 - WARNING - Tentativa de criar email AlineAzevedo7669279@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,633 - ERROR - Error ao criar conta de email: AlineAzevedo7662881@gmail.com
+2025-01-05 14:59:28,634 - WARNING - Tentativa de criar email AlineAzevedo7662881@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,650 - ERROR - Error ao criar conta de email: VanessaCunha3888965@gmail.com
+2025-01-05 14:59:28,651 - WARNING - Tentativa de criar email VanessaCunha3888965@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,685 - ERROR - Error ao criar conta de email: VanessaCunha3884664@gmail.com
+2025-01-05 14:59:28,687 - WARNING - Tentativa de criar email VanessaCunha3884664@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,695 - ERROR - Error ao criar conta de email: VanessaCunha3888186@gmail.com
+2025-01-05 14:59:28,695 - WARNING - Tentativa de criar email VanessaCunha3888186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,706 - ERROR - Error ao criar conta de email: VanessaCunha3882726@gmail.com
+2025-01-05 14:59:28,707 - WARNING - Tentativa de criar email VanessaCunha3882726@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,717 - ERROR - Error ao criar conta de email: VanessaCunha3886229@gmail.com
+2025-01-05 14:59:28,717 - WARNING - Tentativa de criar email VanessaCunha3886229@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,726 - ERROR - Error ao criar conta de email: JulianaSilva4446693@gmail.com
+2025-01-05 14:59:28,726 - WARNING - Tentativa de criar email JulianaSilva4446693@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,735 - ERROR - Error ao criar conta de email: JulianaSilva4449165@gmail.com
+2025-01-05 14:59:28,736 - WARNING - Tentativa de criar email JulianaSilva4449165@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,744 - ERROR - Error ao criar conta de email: JulianaSilva4446471@gmail.com
+2025-01-05 14:59:28,744 - WARNING - Tentativa de criar email JulianaSilva4446471@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,752 - ERROR - Error ao criar conta de email: JulianaSilva4444702@gmail.com
+2025-01-05 14:59:28,752 - WARNING - Tentativa de criar email JulianaSilva4444702@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,760 - ERROR - Error ao criar conta de email: JulianaSilva4442399@gmail.com
+2025-01-05 14:59:28,761 - WARNING - Tentativa de criar email JulianaSilva4442399@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,767 - ERROR - Error ao criar conta de email: AdrianaCosta3772655@gmail.com
+2025-01-05 14:59:28,768 - WARNING - Tentativa de criar email AdrianaCosta3772655@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,775 - ERROR - Error ao criar conta de email: AdrianaCosta3776504@gmail.com
+2025-01-05 14:59:28,776 - WARNING - Tentativa de criar email AdrianaCosta3776504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,784 - ERROR - Error ao criar conta de email: AdrianaCosta3777254@gmail.com
+2025-01-05 14:59:28,784 - WARNING - Tentativa de criar email AdrianaCosta3777254@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,790 - ERROR - Error ao criar conta de email: AdrianaCosta3779981@gmail.com
+2025-01-05 14:59:28,791 - WARNING - Tentativa de criar email AdrianaCosta3779981@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,798 - ERROR - Error ao criar conta de email: AdrianaCosta3776899@gmail.com
+2025-01-05 14:59:28,798 - WARNING - Tentativa de criar email AdrianaCosta3776899@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,805 - ERROR - Error ao criar conta de email: RaquelPereira3756146@gmail.com
+2025-01-05 14:59:28,806 - WARNING - Tentativa de criar email RaquelPereira3756146@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,813 - ERROR - Error ao criar conta de email: RaquelPereira3753367@gmail.com
+2025-01-05 14:59:28,814 - WARNING - Tentativa de criar email RaquelPereira3753367@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,818 - ERROR - Error ao criar conta de email: RaquelPereira3757358@gmail.com
+2025-01-05 14:59:28,819 - WARNING - Tentativa de criar email RaquelPereira3757358@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,825 - ERROR - Error ao criar conta de email: RaquelPereira3753578@gmail.com
+2025-01-05 14:59:28,825 - WARNING - Tentativa de criar email RaquelPereira3753578@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,832 - ERROR - Error ao criar conta de email: RaquelPereira3755209@gmail.com
+2025-01-05 14:59:28,832 - WARNING - Tentativa de criar email RaquelPereira3755209@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,838 - ERROR - Error ao criar conta de email: CatarinaMelo1308129@gmail.com
+2025-01-05 14:59:28,838 - WARNING - Tentativa de criar email CatarinaMelo1308129@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,846 - ERROR - Error ao criar conta de email: CatarinaMelo1309136@gmail.com
+2025-01-05 14:59:28,846 - WARNING - Tentativa de criar email CatarinaMelo1309136@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,850 - ERROR - Error ao criar conta de email: CatarinaMelo1303587@gmail.com
+2025-01-05 14:59:28,850 - WARNING - Tentativa de criar email CatarinaMelo1303587@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,855 - ERROR - Error ao criar conta de email: CatarinaMelo1302228@gmail.com
+2025-01-05 14:59:28,856 - WARNING - Tentativa de criar email CatarinaMelo1302228@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,862 - ERROR - Error ao criar conta de email: CatarinaMelo1304390@gmail.com
+2025-01-05 14:59:28,863 - WARNING - Tentativa de criar email CatarinaMelo1304390@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,867 - ERROR - Error ao criar conta de email: RoseliRochas3422028@gmail.com
+2025-01-05 14:59:28,867 - WARNING - Tentativa de criar email RoseliRochas3422028@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,873 - ERROR - Error ao criar conta de email: RoseliRochas3424455@gmail.com
+2025-01-05 14:59:28,873 - WARNING - Tentativa de criar email RoseliRochas3424455@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,879 - ERROR - Error ao criar conta de email: RoseliRochas3429504@gmail.com
+2025-01-05 14:59:28,879 - WARNING - Tentativa de criar email RoseliRochas3429504@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,884 - ERROR - Error ao criar conta de email: RoseliRochas3424842@gmail.com
+2025-01-05 14:59:28,885 - WARNING - Tentativa de criar email RoseliRochas3424842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,889 - ERROR - Error ao criar conta de email: RoseliRochas3426570@gmail.com
+2025-01-05 14:59:28,890 - WARNING - Tentativa de criar email RoseliRochas3426570@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,896 - ERROR - Error ao criar conta de email: DanieleSimões6409771@gmail.com
+2025-01-05 14:59:28,896 - WARNING - Tentativa de criar email DanieleSimões6409771@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,901 - ERROR - Error ao criar conta de email: DanieleSimões6409394@gmail.com
+2025-01-05 14:59:28,901 - WARNING - Tentativa de criar email DanieleSimões6409394@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,906 - ERROR - Error ao criar conta de email: DanieleSimões6409829@gmail.com
+2025-01-05 14:59:28,907 - WARNING - Tentativa de criar email DanieleSimões6409829@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,913 - ERROR - Error ao criar conta de email: DanieleSimões6403040@gmail.com
+2025-01-05 14:59:28,913 - WARNING - Tentativa de criar email DanieleSimões6403040@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,918 - ERROR - Error ao criar conta de email: DanieleSimões6406066@gmail.com
+2025-01-05 14:59:28,918 - WARNING - Tentativa de criar email DanieleSimões6406066@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,924 - ERROR - Error ao criar conta de email: VerônicaMota7445902@gmail.com
+2025-01-05 14:59:28,925 - WARNING - Tentativa de criar email VerônicaMota7445902@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,931 - ERROR - Error ao criar conta de email: VerônicaMota7446329@gmail.com
+2025-01-05 14:59:28,931 - WARNING - Tentativa de criar email VerônicaMota7446329@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,936 - ERROR - Error ao criar conta de email: VerônicaMota7443509@gmail.com
+2025-01-05 14:59:28,937 - WARNING - Tentativa de criar email VerônicaMota7443509@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,944 - ERROR - Error ao criar conta de email: VerônicaMota7448788@gmail.com
+2025-01-05 14:59:28,945 - WARNING - Tentativa de criar email VerônicaMota7448788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,949 - ERROR - Error ao criar conta de email: VerônicaMota7443027@gmail.com
+2025-01-05 14:59:28,950 - WARNING - Tentativa de criar email VerônicaMota7443027@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,954 - ERROR - Error ao criar conta de email: MartaMartins1648913@gmail.com
+2025-01-05 14:59:28,955 - WARNING - Tentativa de criar email MartaMartins1648913@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,961 - ERROR - Error ao criar conta de email: MartaMartins1646175@gmail.com
+2025-01-05 14:59:28,962 - WARNING - Tentativa de criar email MartaMartins1646175@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,966 - ERROR - Error ao criar conta de email: MartaMartins1649206@gmail.com
+2025-01-05 14:59:28,966 - WARNING - Tentativa de criar email MartaMartins1649206@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,971 - ERROR - Error ao criar conta de email: MartaMartins1644516@gmail.com
+2025-01-05 14:59:28,972 - WARNING - Tentativa de criar email MartaMartins1644516@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,978 - ERROR - Error ao criar conta de email: MartaMartins1642400@gmail.com
+2025-01-05 14:59:28,979 - WARNING - Tentativa de criar email MartaMartins1642400@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,983 - ERROR - Error ao criar conta de email: JuliaBrito7872768@gmail.com
+2025-01-05 14:59:28,983 - WARNING - Tentativa de criar email JuliaBrito7872768@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,989 - ERROR - Error ao criar conta de email: JuliaBrito7879013@gmail.com
+2025-01-05 14:59:28,989 - WARNING - Tentativa de criar email JuliaBrito7879013@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:28,995 - ERROR - Error ao criar conta de email: JuliaBrito7876778@gmail.com
+2025-01-05 14:59:28,995 - WARNING - Tentativa de criar email JuliaBrito7876778@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,000 - ERROR - Error ao criar conta de email: JuliaBrito7879258@gmail.com
+2025-01-05 14:59:29,000 - WARNING - Tentativa de criar email JuliaBrito7879258@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,005 - ERROR - Error ao criar conta de email: ElaineTeixeira4002929@gmail.com
+2025-01-05 14:59:29,005 - WARNING - Tentativa de criar email ElaineTeixeira4002929@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,011 - ERROR - Error ao criar conta de email: ElaineTeixeira4001763@gmail.com
+2025-01-05 14:59:29,011 - WARNING - Tentativa de criar email ElaineTeixeira4001763@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,016 - ERROR - Error ao criar conta de email: ElaineTeixeira4007151@gmail.com
+2025-01-05 14:59:29,017 - WARNING - Tentativa de criar email ElaineTeixeira4007151@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,023 - ERROR - Error ao criar conta de email: ElaineTeixeira4009326@gmail.com
+2025-01-05 14:59:29,024 - WARNING - Tentativa de criar email ElaineTeixeira4009326@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,029 - ERROR - Error ao criar conta de email: ElaineTeixeira4004698@gmail.com
+2025-01-05 14:59:29,029 - WARNING - Tentativa de criar email ElaineTeixeira4004698@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,034 - ERROR - Error ao criar conta de email: JulianaFagundes1022404@gmail.com
+2025-01-05 14:59:29,034 - WARNING - Tentativa de criar email JulianaFagundes1022404@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,039 - ERROR - Error ao criar conta de email: JulianaFagundes1025752@gmail.com
+2025-01-05 14:59:29,040 - WARNING - Tentativa de criar email JulianaFagundes1025752@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,045 - ERROR - Error ao criar conta de email: JulianaFagundes1021991@gmail.com
+2025-01-05 14:59:29,046 - WARNING - Tentativa de criar email JulianaFagundes1021991@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,050 - ERROR - Error ao criar conta de email: JulianaFagundes1021512@gmail.com
+2025-01-05 14:59:29,051 - WARNING - Tentativa de criar email JulianaFagundes1021512@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,056 - ERROR - Error ao criar conta de email: JulianaFagundes1028788@gmail.com
+2025-01-05 14:59:29,057 - WARNING - Tentativa de criar email JulianaFagundes1028788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,062 - ERROR - Error ao criar conta de email: SílviaMonteiro8125149@gmail.com
+2025-01-05 14:59:29,062 - WARNING - Tentativa de criar email SílviaMonteiro8125149@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,068 - ERROR - Error ao criar conta de email: SílviaMonteiro8121186@gmail.com
+2025-01-05 14:59:29,068 - WARNING - Tentativa de criar email SílviaMonteiro8121186@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,075 - ERROR - Error ao criar conta de email: SílviaMonteiro8121351@gmail.com
+2025-01-05 14:59:29,076 - WARNING - Tentativa de criar email SílviaMonteiro8121351@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,082 - ERROR - Error ao criar conta de email: SílviaMonteiro8124006@gmail.com
+2025-01-05 14:59:29,083 - WARNING - Tentativa de criar email SílviaMonteiro8124006@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,089 - ERROR - Error ao criar conta de email: SílviaMonteiro8128524@gmail.com
+2025-01-05 14:59:29,090 - WARNING - Tentativa de criar email SílviaMonteiro8128524@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,095 - ERROR - Error ao criar conta de email: CláudiaOliveira8853385@gmail.com
+2025-01-05 14:59:29,096 - WARNING - Tentativa de criar email CláudiaOliveira8853385@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,099 - ERROR - Error ao criar conta de email: CláudiaOliveira8852427@gmail.com
+2025-01-05 14:59:29,100 - WARNING - Tentativa de criar email CláudiaOliveira8852427@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,106 - ERROR - Error ao criar conta de email: CláudiaOliveira8855104@gmail.com
+2025-01-05 14:59:29,107 - WARNING - Tentativa de criar email CláudiaOliveira8855104@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,112 - ERROR - Error ao criar conta de email: CláudiaOliveira8858180@gmail.com
+2025-01-05 14:59:29,112 - WARNING - Tentativa de criar email CláudiaOliveira8858180@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,117 - ERROR - Error ao criar conta de email: CláudiaOliveira8858112@gmail.com
+2025-01-05 14:59:29,117 - WARNING - Tentativa de criar email CláudiaOliveira8858112@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,122 - ERROR - Error ao criar conta de email: CamilaTeixeira3008438@gmail.com
+2025-01-05 14:59:29,123 - WARNING - Tentativa de criar email CamilaTeixeira3008438@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,128 - ERROR - Error ao criar conta de email: CamilaTeixeira3005581@gmail.com
+2025-01-05 14:59:29,129 - WARNING - Tentativa de criar email CamilaTeixeira3005581@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,133 - ERROR - Error ao criar conta de email: CamilaTeixeira3004788@gmail.com
+2025-01-05 14:59:29,134 - WARNING - Tentativa de criar email CamilaTeixeira3004788@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,139 - ERROR - Error ao criar conta de email: CamilaTeixeira3005348@gmail.com
+2025-01-05 14:59:29,140 - WARNING - Tentativa de criar email CamilaTeixeira3005348@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,145 - ERROR - Error ao criar conta de email: CamilaTeixeira3007396@gmail.com
+2025-01-05 14:59:29,146 - WARNING - Tentativa de criar email CamilaTeixeira3007396@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,151 - ERROR - Error ao criar conta de email: KellyRibeiro2947493@gmail.com
+2025-01-05 14:59:29,151 - WARNING - Tentativa de criar email KellyRibeiro2947493@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,159 - ERROR - Error ao criar conta de email: KellyRibeiro2946415@gmail.com
+2025-01-05 14:59:29,160 - WARNING - Tentativa de criar email KellyRibeiro2946415@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,164 - ERROR - Error ao criar conta de email: KellyRibeiro2945767@gmail.com
+2025-01-05 14:59:29,164 - WARNING - Tentativa de criar email KellyRibeiro2945767@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,168 - ERROR - Error ao criar conta de email: KellyRibeiro2945812@gmail.com
+2025-01-05 14:59:29,169 - WARNING - Tentativa de criar email KellyRibeiro2945812@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,176 - ERROR - Error ao criar conta de email: KellyRibeiro2948980@gmail.com
+2025-01-05 14:59:29,176 - WARNING - Tentativa de criar email KellyRibeiro2948980@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,181 - ERROR - Error ao criar conta de email: DanieleSantiago5265670@gmail.com
+2025-01-05 14:59:29,181 - WARNING - Tentativa de criar email DanieleSantiago5265670@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,186 - ERROR - Error ao criar conta de email: DanieleSantiago5268461@gmail.com
+2025-01-05 14:59:29,186 - WARNING - Tentativa de criar email DanieleSantiago5268461@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,193 - ERROR - Error ao criar conta de email: DanieleSantiago5267883@gmail.com
+2025-01-05 14:59:29,193 - WARNING - Tentativa de criar email DanieleSantiago5267883@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,197 - ERROR - Error ao criar conta de email: DanieleSantiago5262639@gmail.com
+2025-01-05 14:59:29,198 - WARNING - Tentativa de criar email DanieleSantiago5262639@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,202 - ERROR - Error ao criar conta de email: DanieleSantiago5268168@gmail.com
+2025-01-05 14:59:29,202 - WARNING - Tentativa de criar email DanieleSantiago5268168@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,210 - ERROR - Error ao criar conta de email: SimoneAlmeida1054513@gmail.com
+2025-01-05 14:59:29,210 - WARNING - Tentativa de criar email SimoneAlmeida1054513@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,214 - ERROR - Error ao criar conta de email: SimoneAlmeida1056842@gmail.com
+2025-01-05 14:59:29,215 - WARNING - Tentativa de criar email SimoneAlmeida1056842@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,219 - ERROR - Error ao criar conta de email: SimoneAlmeida1059519@gmail.com
+2025-01-05 14:59:29,219 - WARNING - Tentativa de criar email SimoneAlmeida1059519@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,226 - ERROR - Error ao criar conta de email: SimoneAlmeida1052109@gmail.com
+2025-01-05 14:59:29,227 - WARNING - Tentativa de criar email SimoneAlmeida1052109@gmail.com falhou. Prosseguindo para o próximo.
+2025-01-05 14:59:29,231 - ERROR - Error ao criar conta de email: SimoneAlmeida1056702@gmail.com
+2025-01-05 14:59:29,231 - WARNING - Tentativa de criar email SimoneAlmeida1056702@gmail.com falhou. Prosseguindo para o próximo.
