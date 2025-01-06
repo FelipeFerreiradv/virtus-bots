@@ -9,6 +9,11 @@ PROXY_SERVER = "Itc6tLLIatUoR93k:wifi;us;;;newland@rotating.proxyempire.io:9000"
 DEFAULT_WAIT_TIME = 5000
 PHONE_NUMBER_AND_ID = get_phone_number()
 
+def random_delay(min_sec=1, max_sec=3):
+    delay = random.uniform(min_sec,max_sec)
+
+    return time.sleep(delay)
+
 class EmailAutomation:
     def __init__(self, proxy, proxy_username, proxy_password):
         self.playwright = sync_playwright().start()
@@ -29,36 +34,51 @@ class EmailAutomation:
         try:
             # abrir página de signup do Google
             self.page.goto(GOOGLE_SIGNUP_URL)
+            random_delay(2, 5)
 
             first_name = generate_random_names()
             last_name = generate_random_surnames()
+            next_button = self.page.get_by_role('button')
+            next_button_text = self.page.get_by_text("Next")
 
             try:
                 if not self.page.locator('input#day').is_visible():
                     self.page.fill('input#firstName', first_name)
                     self.page.fill('input#lastName', last_name)
-                    next_button = self.page.get_by_role('button')
-                    next_button_text = self.page.get_by_text("Next")
-                    next_button.click()
                     logging.info(f"Filled: {first_name} {last_name}")
+                    random_delay()
+                    next_button.click()
+                    random_delay(1, 3)
 
+                self.page.mouse.move(100, 200)
                 self.page.get_by_label('Month').select_option("January")
                 self.page.wait_for_selector('input#day', timeout=DEFAULT_WAIT_TIME)
                 self.page.fill('input#day', str(random.randint(1,30)))
                 self.page.fill("input#year", str(random.randint(1940, 2000)))
                 gender_select = self.page.locator("select[id = 'gender']")
                 gender_select.select_option(label="Rather not say")
+                random_delay()
                 next_button.click()
+                random_delay(2, 5)
+                
+                self.page.mouse.move(200, 150)
                 self.page.wait_for_load_state()
                 self.page.wait_for_selector("input[name='Username']", timeout=DEFAULT_WAIT_TIME)
                 self.page.locator("input[name='Username']").fill(gmail)
                 logging.info("Input gmail filled")
                 self.page.wait_for_selector("button", timeout=DEFAULT_WAIT_TIME)
+                random_delay()
                 next_button_text.click(force=True)
+                random_delay(1,5)
+
+                self.page.mouse.move(400, 250)
+                self.page.wait_for_selector("input[name='Passwd']", timeout=DEFAULT_WAIT_TIME)
                 self.page.locator("input[name='Passwd']").fill(password)
-                self.page.locator("input[name='PasswdAgain']").fill(password)
+                password_filled = self.page.locator("input[name='PasswdAgain']").fill(password)
                 logging.info("Password filled")
+                random_delay()
                 next_button.click()
+                random_delay(5,10)
 
                 # if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
                 #     self.page.get_by_text("Crie seu próprio endereço do Gmail").click()
@@ -73,6 +93,7 @@ class EmailAutomation:
                 #     logging.info(f"Phone number filled: {get_phone_number()}")
                 #     next_button.click()
                 # else:
+                self.page.mouse.move(100, 200)
                 self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
                 self.page.fill("input#phoneNumberId", str(PHONE_NUMBER_AND_ID[0]))
                 logging.info(f"Phone number filled: {str(PHONE_NUMBER_AND_ID[0])}")
@@ -80,10 +101,18 @@ class EmailAutomation:
 
                 try:
                     self.page.wait_for_selector("input#code", timeout=10000)
-                    self.page.fill("input#code", get_verification_code())
-                    next_button.click()
+
+                    verification_code = get_verification_code()
+
+                    if verification_code:
+                        self.page.fill("input#code", get_verification_code())
+                        next_button.click()
+                        logging.info(f"Verification code filled sucessfully: {verification_code}")
+                    else:
+                        logging.error(f"Error to fill verification code: {verification_code}")
                 except Exception as e:
                     logging.error(f"Error to fill code number: {e}")
+                    return False
             
             except PlaywrightTimeoutError as e:
                 logging.error(f"Timeout encountered: {e}")
