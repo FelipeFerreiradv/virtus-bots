@@ -12,7 +12,7 @@ PHONE_NUMBER_AND_ID = get_phone_number()
 class EmailAutomation:
     def __init__(self, proxy, proxy_username, proxy_password):
         self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.launch(
+        self.browser = self.playwright.firefox.launch(
             headless=False,
             proxy={
                 "server": proxy,
@@ -47,7 +47,7 @@ class EmailAutomation:
                 self.page.fill('input#day', str(random.randint(1,30)))
                 self.page.fill("input#year", str(random.randint(1940, 2000)))
                 gender_select = self.page.locator("select[id = 'gender']")
-                gender_select.select_option(label="Male")
+                gender_select.select_option(label="Rather not say")
                 next_button.click()
                 self.page.wait_for_load_state()
                 self.page.wait_for_selector("input[name='Username']", timeout=DEFAULT_WAIT_TIME)
@@ -58,7 +58,6 @@ class EmailAutomation:
                 self.page.locator("input[name='Passwd']").fill(password)
                 self.page.locator("input[name='PasswdAgain']").fill(password)
                 logging.info("Password filled")
-                time.sleep(5)
                 next_button.click()
 
                 # if self.page.get_by_text("Crie seu próprio endereço do Gmail"):
@@ -80,7 +79,7 @@ class EmailAutomation:
                 next_button.click()
 
                 try:
-                    self.page.wait_for_selector("input#code", timeout=5000)
+                    self.page.wait_for_selector("input#code", timeout=10000)
                     self.page.fill("input#code", get_verification_code())
                     next_button.click()
                 except Exception as e:
