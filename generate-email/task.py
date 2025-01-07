@@ -157,7 +157,7 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number(product="google", country=f"usa", operator="any"):
+def get_phone_number(product="google", country="indonesia", operator="any"):
     try:
         headers = {
             'Authorization': f'Bearer {API_KEY_5SIM}',
