@@ -94,13 +94,13 @@ class EmailAutomation:
                 random_delay()
                 next_button.click()
 
-                self.page.wait_for_selector("input#code", timeout=10000)
+                self.page.wait_for_selector("input#code", timeout=DEFAULT_WAIT_TIME)
 
                 verification_code = get_verification_code()
 
                 if verification_code:
                     self.page.locator("input#code").clear()
-                    self.page.fill("input#code", get_verification_code())
+                    self.page.fill("input#code", verification_code)
                     next_button.click()
                     logging.info(f"Verification code filled sucessfully: {verification_code}")
                 else:
