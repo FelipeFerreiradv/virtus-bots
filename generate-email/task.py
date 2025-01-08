@@ -157,7 +157,7 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number(product="google", country="indonesia", operator="any"):
+def get_phone_number(product="google", country="brazil", operator="any"):
     try:
         headers = {
             'Authorization': f'Bearer {API_KEY_5SIM}',
@@ -173,6 +173,7 @@ def get_phone_number(product="google", country="indonesia", operator="any"):
         response = requests.get(
             f"https://5sim.net/v1/user/buy/activation/{country}/{operator}/{product}",
             headers=headers, 
+            params=params
         )
 
         response.raise_for_status()
@@ -184,7 +185,7 @@ def get_phone_number(product="google", country="indonesia", operator="any"):
         
         logging.debug(f"Headers enviados: {headers}")
         logging.debug(f"Parametros enviados: {params}")
-        logging.debug(f"Resposta completa enviados: {response}")
+        logging.debug(f"Resposta completa enviados: {response.text}")
         if phone and id:
             logging.info(f"Número de telefone e id adquirido: {phone} | {id}")
             return phone, id
@@ -197,8 +198,11 @@ def get_phone_number(product="google", country="indonesia", operator="any"):
 
 def get_verification_code():
     try:
-        for _ in range(10):
-            id= get_phone_number()
+        for attempt in range(10):
+            phone, id = get_phone_number()
+
+            if not id:
+                logging.error("Error to found number id")
 
             headers = {
             'Authorization': f'Bearer {API_KEY_5SIM}',
@@ -206,17 +210,23 @@ def get_verification_code():
             }
 
             response = requests.get(
-                f'https://5sim.net/v1/user/check/{id[1]}', headers=headers
+                f'https://5sim.net/v1/user/check/{id}', headers=headers
             )
             response.raise_for_status()
 
             data = response.json()
+
             if 'sms' in data and len(data['sms']) > 0:
-                return data['sms'][0]['code']
-            time.sleep(5)  # Esperar 5 segundos antes de tentar novamente
-        logging.warning("Código não recebido a tempo.")
+                verification_code = data['sms'][0]['code']
+                logging.info(f"Código de verificação recebido: {verification_code}")
+                return verification_code
+            
+            logging.info(f"Attempt {attempt + 1}: Code not received. Waiting 5 seconds...")
+            time.sleep(5)
+
+        logging.warning("Code not received after 10 seconds")
         return None
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao buscar código: {e}")
         return None
     

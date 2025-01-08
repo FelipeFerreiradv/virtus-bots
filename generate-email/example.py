@@ -100,7 +100,7 @@ class EmailAutomation:
 
                 if verification_code:
                     self.page.locator("input#code").clear()
-                    self.page.fill("input#code", get_verification_code())
+                    self.page.fill("input#code", verification_code)
                     next_button.click()
                     logging.info(f"Verification code filled sucessfully: {verification_code}")
                 else:
