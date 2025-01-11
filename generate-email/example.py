@@ -63,7 +63,6 @@ class EmailAutomation:
                     self.page.locator('input#lastName').clear()
                     self.page.fill('input#lastName', last_name)
                     logging.info(f"Filled: {first_name} {last_name}")
-                    random_delay()
                     next_button.click()
 
                 self.page.wait_for_selector('input#day', timeout=DEFAULT_WAIT_TIME)
@@ -74,7 +73,6 @@ class EmailAutomation:
                 self.page.fill("input#year", str(random.randint(1940, 2000)))
                 gender_select = self.page.locator("select[id = 'gender']")
                 gender_select.select_option(label=f"{random_sex()}")
-                random_delay()
                 next_button.click()
 
                 time.sleep(2)
@@ -83,23 +81,20 @@ class EmailAutomation:
                     select_radio_email.click()
 
                 self.page.wait_for_selector("input[name='Username']", timeout=DEFAULT_WAIT_TIME)
-                self.simulate_typing(self.page.locator("input[name='Username']"), gmail)
+                self.page.locator("input[name='Username']").fill(gmail)
                 logging.info("Input gmail filled")
-                random_delay()
                 next_button_text.click()
 
                 self.page.wait_for_selector("input[name='Passwd']", timeout=DEFAULT_WAIT_TIME)
-                self.simulate_typing(self.page.locator("input[name='Passwd']"), password)
-                self.simulate_typing(self.page.locator("input[name='PasswdAgain']"), password)
+                self.page.locator("input[name='Passwd']").fill(password)
+                self.page.locator("input[name='PasswdAgain']").fill(password)
                 logging.info("Password filled")
-                random_delay()
                 next_button.click()
 
                 self.page.wait_for_selector("input#phoneNumberId", timeout=DEFAULT_WAIT_TIME)
                 self.page.locator("input#phoneNumberId").clear()
                 self.page.fill("input#phoneNumberId", str(PHONE_NUMBER_AND_ID[0]))
                 logging.info(f"Phone number filled: {str(PHONE_NUMBER_AND_ID[0])}")
-                random_delay()
                 next_button.click()
 
                 self.page.wait_for_selector("input#code", timeout=DEFAULT_WAIT_TIME)

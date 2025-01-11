@@ -204,7 +204,7 @@ def get_phone_number(product="google", country=f"brazil", operator="any"):
 
 def get_verification_code():
     try:
-        for attempt in range(10):
+        for attempt in range(20):
             phone, id = get_phone_number()
 
             if not id:
@@ -227,7 +227,7 @@ def get_verification_code():
                 logging.info(f"Código de verificação recebido: {verification_code}")
                 return verification_code
             
-            logging.info(f"Attempt {attempt + 1}: Code not received. Waiting 5 seconds...")
+            logging.info(f"Attempt {attempt + 1}: Code not received. Waiting 10 seconds...")
             time.sleep(10)
 
         logging.warning("Code not received after 10 seconds")
