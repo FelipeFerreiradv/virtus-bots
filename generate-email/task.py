@@ -22,7 +22,6 @@ DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
 DB_USER = os.getenv("DB_USER", "root")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 DB_NAME = os.getenv("DB_NAME", "bot_email_generate")
-RANDOM_COUNTRIES = ["philippines", "ethiopia", "vietnam", "indonesia", "azerbaijan", "cambodia", "uzbekistan", "lithuania", "tanzania"]
 
 # Instância global do Faker
 faker = Faker()
@@ -113,6 +112,13 @@ def generate_random_surnames():
 
     return random.choice(email_surnames)
 
+def generate_random_countries():
+    RANDOM_COUNTRIES = ["philippines", "ethiopia", "vietnam", "indonesia", "azerbaijan", "cambodia", "uzbekistan", "lithuania", "tanzania"]
+
+    random_countries_values = random.choice(RANDOM_COUNTRIES)
+
+    return random_countries_values
+
 def generate_emails(base_email, amount, db):
     emails_generated = []
     for _ in range(amount):
@@ -157,7 +163,7 @@ def fetch_emails(db):
         logging.error(f"Erro ao buscar emails: {e}")
         return []
 
-def get_phone_number(product="google", country="brazil", operator="any"):
+def get_phone_number(product="google", country=f"brazil", operator="any"):
     try:
         headers = {
             'Authorization': f'Bearer {API_KEY_5SIM}',
@@ -229,7 +235,7 @@ def get_verification_code():
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao buscar código: {e}")
         return None
-    
+
 if __name__ == "__main__":
     db = connect_db()
     if db:
